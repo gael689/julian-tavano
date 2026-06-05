@@ -68,12 +68,13 @@ export default function Contact() {
             CONTACTO
           </motion.p>
           <h2
-            className="font-bold text-cream"
+            className="font-bold text-cream overflow-hidden"
             style={{
               fontFamily: "'Century Gothic', Futura, sans-serif",
-              fontSize: 'clamp(4.5rem, 13vw, 11rem)',
+              fontSize: 'clamp(2.2rem, 13vw, 11rem)',
               lineHeight: 0.95,
               letterSpacing: '-0.01em',
+              whiteSpace: 'nowrap',
             }}
           >
             <CharReveal text={t('title')} isActive={inView} />

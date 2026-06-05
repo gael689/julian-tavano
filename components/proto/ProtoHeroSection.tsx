@@ -22,10 +22,10 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
   const t = useTranslations('protoPage');
 
   return (
-    <section className="relative min-h-screen bg-charcoal overflow-hidden">
+    <section className="relative bg-charcoal overflow-hidden">
 
-      {/* Image — absolutely positioned on the right half, never affects layout */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-[55%]">
+      {/* ── Desktop only: absolute image on right half ── */}
+      <div className="hidden lg:block absolute inset-y-0 right-0 w-[55%]">
         <motion.div
           className="absolute inset-0"
           initial={{ clipPath: 'inset(0 100% 0 0)' }}
@@ -45,16 +45,15 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
               priority
               quality={95}
               className="object-cover object-top"
-              sizes="(max-width: 1024px) 100vw, 55vw"
+              sizes="55vw"
             />
           </motion.div>
         </motion.div>
-        {/* Gradient masking left edge on desktop so text stays legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/60 to-transparent lg:via-charcoal/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/20 to-transparent" />
       </div>
 
-      {/* Content — uses container-layout, same as the navbar */}
-      <div className="container-layout relative z-10 min-h-screen flex flex-col justify-between py-32">
+      {/* ── Text content ── */}
+      <div className="container-layout relative z-10 lg:min-h-screen lg:flex lg:flex-col lg:justify-between lg:py-32 pt-32 pb-10 lg:pb-0">
 
         {/* Back link */}
         <motion.div
@@ -70,10 +69,9 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
           </Link>
         </motion.div>
 
-        {/* Title + specs — left half on desktop */}
-        <div className="lg:max-w-[48%]">
+        {/* Title + specs */}
+        <div className="lg:max-w-[48%] mt-10 lg:mt-0">
 
-          {/* Type label (Cabaña / Casa) */}
           <div className="overflow-hidden">
             <motion.span
               initial={{ y: '110%' }}
@@ -86,7 +84,6 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
             </motion.span>
           </div>
 
-          {/* Name */}
           <div className="overflow-hidden">
             <motion.span
               initial={{ y: '110%' }}
@@ -99,7 +96,6 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
             </motion.span>
           </div>
 
-          {/* Tagline */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,7 +105,6 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
             {tagline}
           </motion.p>
 
-          {/* Specs */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,7 +124,6 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
             ))}
           </motion.div>
 
-          {/* CTA scroll */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,8 +140,37 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
           </motion.div>
         </div>
 
-        {/* Bottom spacer */}
-        <div />
+        {/* Desktop spacer */}
+        <div className="hidden lg:block" />
+      </div>
+
+      {/* ── Mobile only: image below content, with top shadow ── */}
+      <div className="lg:hidden relative aspect-[3/2] overflow-hidden">
+        <motion.div
+          className="absolute inset-0"
+          initial={{ clipPath: 'inset(0 100% 0 0)' }}
+          animate={{ clipPath: 'inset(0 0% 0 0)' }}
+          transition={{ duration: 1.3, delay: 0.3, ease }}
+        >
+          <motion.div
+            className="w-full h-full"
+            initial={{ scale: 1.08 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <Image
+              src={heroImage.src}
+              alt={heroImage.alt}
+              fill
+              priority
+              quality={95}
+              className="object-cover object-top"
+              sizes="100vw"
+            />
+          </motion.div>
+        </motion.div>
+        {/* Top shadow — blends image into the charcoal text section above */}
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-charcoal to-transparent pointer-events-none" />
       </div>
 
     </section>

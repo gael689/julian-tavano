@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "prototipos": "Prototipos",
+    "obras": "Obras",
+    "sobre": "Sobre",
+    "contacto": "Contacto"
+  },
+  "hero": {
+    "carousel": {
+      "slide_1": {
+        "eyebrow": "PROTOTIPOS",
+        "title": "Casas listas para tu terreno.",
+        "subtitle": "Seis modelos diseñados para construir, trasladar y habitar en tres meses.",
+        "cta": "Ver prototipos"
+      },
+      "slide_2": {
+        "eyebrow": "PROYECTOS A MEDIDA",
+        "title": "Tu casa, diseñada para vos.",
+        "subtitle": "Diseño de autor para clientes en Argentina y el exterior.",
+        "cta": "Conocer más"
+      },
+      "slide_3": {
+        "eyebrow": "+50 OBRAS",
+        "title": "Cada pin es una casa construida.",
+        "subtitle": "Monte Hermoso, la costa atlántica y más allá.",
+        "cta": "Explorar el mapa"
+      }
+    }
+  },
+  "prototipos": {
+    "eyebrow": "PROTOTIPOS",
+    "title": "Viviendas listas para tu terreno.",
+    "cta": "VER PROYECTO →",
+    "explorar": "EXPLORAR →",
+    "consultar": "CONSULTAR POR ESTE PROTOTIPO",
+    "diferenciales": {
+      "galpon": "Construcción en galpón con materiales de primera calidad.",
+      "entrega": "Entrega en 3 meses, lista para habitar.",
+      "traslado": "Traslado a todo Argentina.",
+      "cero_conflicto": "Cero conflicto de obra. Incluye instalaciones completas y artefactos."
+    }
+  },
+  "customProjects": {
+    "title": "PROYECTOS PERSONALIZADOS",
+    "text": "Cada terreno cuenta una historia. La diseñamos juntos.",
+    "desc": "Ofrecemos diseño arquitectónico a medida, manteniendo nuestra filosofía de respeto por el entorno, calidez espacial y eficiencia constructiva.",
+    "cta": "EMPEZAR UN PROYECTO"
+  },
+  "obras": {
+    "eyebrow": "MONTE HERMOSO · BALNEARIO SAUCE GRANDE · ZONA",
+    "title": "+50 OBRAS",
+    "title_home": "+50 OBRAS CONSTRUIDAS",
+    "subtitle_home": "Monte Hermoso y zona.",
+    "subtitle": "Cada pin es una casa construida.",
+    "cta": "VER TODAS LAS OBRAS →",
+    "home_desc": "Explorá el mapa interactivo con más de 50 proyectos construidos en Monte Hermoso y la costa atlántica argentina.",
+    "map_cta": "VER MAPA INTERACTIVO",
+    "search": "Buscar por nombre o zona...",
+    "ver_mas": "Ver más",
+    "proximamente": "Próximamente."
+  },
+  "about": {
+    "title": "JULIÁN TAVANO",
+    "bio1": "Arquitecto enfocado en la conexión entre hábitat y naturaleza.",
+    "bio2": "Especialista en construcción modular eficiente, con base en Monte Hermoso.",
+    "bio3": "Diseñamos espacios que respetan el entorno y elevan la calidad de vida.",
+    "stats": {
+      "obras": "+50",
+      "obras_label": "obras construidas",
+      "trayectoria": "+10",
+      "trayectoria_label": "años de trayectoria",
+      "entregas": "100%",
+      "entregas_label": "proyectos entregados"
+    }
+  },
+  "contact": {
+    "title": "EMPECEMOS",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono / WhatsApp",
+      "interest": "¿Qué te interesa?",
+      "interest_proto": "Un prototipo en particular",
+      "interest_custom": "Proyecto a medida",
+      "interest_general": "Consulta general",
+      "land": "¿Tenés terreno?",
+      "land_yes": "Sí",
+      "land_no": "No",
+      "land_process": "En proceso de compra",
+      "zone": "Zona donde construirías",
+      "message": "Mensaje",
+      "submit": "ENVIAR CONSULTA",
+      "success": "Consulta enviada con éxito. Nos pondremos en contacto pronto."
+    }
+  },
+  "protoPage": {
+    "type_cabana": "Cabaña",
+    "type_casa": "Casa",
+    "back": "← Prototipos",
+    "conoce_mas": "CONOCÉ MÁS",
+    "descripcion": "DESCRIPCIÓN",
+    "caracteristicas": "CARACTERÍSTICAS",
+    "distribucion": "Distribución",
+    "servicio": "SERVICIO",
+    "siguiente_paso": "SIGUIENTE PASO",
+    "cta_title": "Empezá tu proyecto hoy.",
+    "cta_wa": "CONSULTAR POR WHATSAPP →",
+    "galeria": "GALERÍA",
+    "highlights": [
+      "Diseño en armonía con la naturaleza",
+      "Ideal para descanso, alquiler turístico o vivienda permanente",
+      "Espacios luminosos, funcionales y cómodos"
+    ],
+    "uso": {
+      "descanso": "Descanso y naturaleza",
+      "vivienda": "Vivienda permanente",
+      "alquiler": "Alquiler turístico"
+    },
+    "specs": {
+      "cubiertos": "Cubiertos",
+      "semicubiertos": "Semicubiertos",
+      "habitacion": "Habitación",
+      "bano": "Baño"
+    },
+    "tabs": {
+      "full_label": "Construcción completa",
+      "full_subtitle": "Fabricamos y entregamos lista para habitar",
+      "full_item_1": "Construcción en galpón con materiales de primera calidad",
+      "full_item_2": "Entrega en 3 meses, lista para habitar",
+      "full_item_3": "Traslado a todo Argentina",
+      "full_item_4": "Cero conflicto de obra en tu terreno",
+      "full_item_5": "Instalaciones completas: agua, cloaca, luz y artefactos",
+      "plans_label": "Solo planos",
+      "plans_subtitle": "Documentación completa para que vos construyas",
+      "plans_item_1": "Planos de arquitectura (plantas, cortes y fachadas)",
+      "plans_item_2": "Memoria descriptiva completa",
+      "plans_item_3": "Especificaciones técnicas y listado de materiales",
+      "plans_item_4": "Documentación para gestión de permiso municipal",
+      "plans_item_5": "Asesoría técnica inicial por videollamada (60 min)",
+      "plans_item_6": "Soporte para consultas durante la construcción",
+      "cta_full": "CONSULTAR CONSTRUCCIÓN COMPLETA",
+      "cta_plans": "CONSULTAR POR LOS PLANOS",
+      "cta_email": "ENVIAR CONSULTA POR EMAIL"
+    }
+  },
+  "footer": {
+    "tagline": "Viviendas que crecen entre los árboles.",
+    "rights": "© 2026 JT Arquitectura. Todos los derechos reservados.",
+    "developed_by": "Desarrollado por"
+  }
+}

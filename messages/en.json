@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "prototipos": "Prototypes",
+    "obras": "Completed Works",
+    "sobre": "About",
+    "contacto": "Contact"
+  },
+  "hero": {
+    "carousel": {
+      "slide_1": {
+        "eyebrow": "PROTOTYPES",
+        "title": "Homes ready for your land.",
+        "subtitle": "Six models designed to build, ship and inhabit in three months.",
+        "cta": "See prototypes"
+      },
+      "slide_2": {
+        "eyebrow": "CUSTOM PROJECTS",
+        "title": "A home designed for you.",
+        "subtitle": "Signature architecture for clients in Argentina and abroad.",
+        "cta": "Learn more"
+      },
+      "slide_3": {
+        "eyebrow": "+50 WORKS",
+        "title": "Each pin is a home we built.",
+        "subtitle": "Monte Hermoso, the Atlantic coast, and beyond.",
+        "cta": "Explore the map"
+      }
+    }
+  },
+  "prototipos": {
+    "eyebrow": "PROTOTYPES",
+    "title": "Homes ready for your land.",
+    "cta": "VIEW PROJECT →",
+    "explorar": "EXPLORE →",
+    "consultar": "INQUIRE ABOUT THIS PROTOTYPE",
+    "diferenciales": {
+      "galpon": "Built off-site with premium materials.",
+      "entrega": "Delivered in 3 months, move-in ready.",
+      "traslado": "Shipped across Argentina.",
+      "cero_conflicto": "Zero on-site disruption. Includes full utilities and fixtures."
+    }
+  },
+  "customProjects": {
+    "title": "CUSTOM PROJECTS",
+    "text": "Every plot tells a story. We design it together.",
+    "desc": "We offer custom architectural design, keeping our philosophy of respect for the environment, spatial warmth, and construction efficiency.",
+    "cta": "START A PROJECT"
+  },
+  "obras": {
+    "eyebrow": "MONTE HERMOSO · BALNEARIO SAUCE GRANDE · SURROUNDINGS",
+    "title": "+50 WORKS",
+    "title_home": "+50 COMPLETED WORKS",
+    "subtitle_home": "Monte Hermoso area.",
+    "subtitle": "Each pin is a home we built.",
+    "cta": "SEE ALL WORKS →",
+    "home_desc": "Explore the interactive map featuring over 50 projects built in Monte Hermoso and along the Argentine Atlantic coast.",
+    "map_cta": "VIEW INTERACTIVE MAP",
+    "search": "Search by name or area...",
+    "ver_mas": "View more",
+    "proximamente": "Coming soon."
+  },
+  "about": {
+    "title": "JULIÁN TAVANO",
+    "bio1": "Architect focused on the connection between habitat and nature.",
+    "bio2": "Specialist in efficient modular construction, based in Monte Hermoso.",
+    "bio3": "We design spaces that respect the environment and elevate quality of life.",
+    "stats": {
+      "obras": "+50",
+      "obras_label": "completed works",
+      "trayectoria": "+10",
+      "trayectoria_label": "years of experience",
+      "entregas": "100%",
+      "entregas_label": "delivered projects"
+    }
+  },
+  "contact": {
+    "title": "LET'S START",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone / WhatsApp",
+      "interest": "What are you interested in?",
+      "interest_proto": "A specific prototype",
+      "interest_custom": "Custom project",
+      "interest_general": "General inquiry",
+      "land": "Do you own land?",
+      "land_yes": "Yes",
+      "land_no": "No",
+      "land_process": "In the process of buying",
+      "zone": "Where would you build?",
+      "message": "Message",
+      "submit": "SEND INQUIRY",
+      "success": "Inquiry sent successfully. We will be in touch soon."
+    }
+  },
+  "protoPage": {
+    "type_cabana": "Cabin",
+    "type_casa": "House",
+    "back": "← Prototypes",
+    "conoce_mas": "LEARN MORE",
+    "descripcion": "DESCRIPTION",
+    "caracteristicas": "FEATURES",
+    "distribucion": "Layout",
+    "servicio": "SERVICE",
+    "siguiente_paso": "NEXT STEP",
+    "cta_title": "Start your project today.",
+    "cta_wa": "INQUIRE ON WHATSAPP →",
+    "galeria": "GALLERY",
+    "highlights": [
+      "Design in harmony with nature",
+      "Ideal for rest, holiday rental or permanent residence",
+      "Bright, functional and comfortable spaces"
+    ],
+    "uso": {
+      "descanso": "Rest & nature",
+      "vivienda": "Permanent residence",
+      "alquiler": "Holiday rental"
+    },
+    "specs": {
+      "cubiertos": "Covered",
+      "semicubiertos": "Semi-covered",
+      "habitacion": "Bedroom",
+      "bano": "Bathroom"
+    },
+    "tabs": {
+      "full_label": "Full construction",
+      "full_subtitle": "We build and deliver move-in ready",
+      "full_item_1": "Off-site construction with premium materials",
+      "full_item_2": "Delivered in 3 months, move-in ready",
+      "full_item_3": "Shipped across Argentina",
+      "full_item_4": "Zero on-site disruption on your land",
+      "full_item_5": "Full utilities: water, sewage, electricity and fixtures",
+      "plans_label": "Plans only",
+      "plans_subtitle": "Full documentation so you can build yourself",
+      "plans_item_1": "Architectural drawings (floor plans, sections and elevations)",
+      "plans_item_2": "Complete descriptive report",
+      "plans_item_3": "Technical specs and materials list",
+      "plans_item_4": "Documentation for municipal building permit",
+      "plans_item_5": "Initial technical consultation via video call (60 min)",
+      "plans_item_6": "Support for queries during construction",
+      "cta_full": "INQUIRE FULL CONSTRUCTION",
+      "cta_plans": "INQUIRE ABOUT PLANS",
+      "cta_email": "SEND EMAIL INQUIRY"
+    }
+  },
+  "footer": {
+    "tagline": "Homes that grow among the trees.",
+    "rights": "© 2026 JT Architecture. All rights reserved.",
+    "developed_by": "Developed by"
+  }
+}

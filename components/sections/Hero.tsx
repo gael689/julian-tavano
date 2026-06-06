@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const SLIDES = [
-  { id: 'prototipos', image: '/prototipos/caba%C3%B1a-coihue/imagenes/01.jpg', anchor: '#prototipos' },
+  { id: 'prototipos', image: '/prototipos/cabana-coihue/imagenes/01.jpg', anchor: '#prototipos' },
   { id: 'a_medida', image: '/prototipos/casa-jarilla/imagenes/01.jpg', anchor: '#proyectos-personalizados' },
   { id: 'obras', image: '/prototipos/casa-coral/imagenes/03.jpg', anchor: '/obras' },
 ];

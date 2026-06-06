@@ -45,7 +45,7 @@ export default function ObrasTeaser() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/prototipos/caba%C3%B1a-brote/imagenes/01.jpg"
+          src="/prototipos/cabana-brote/imagenes/01.jpg"
           alt=""
           fill
           quality={80}

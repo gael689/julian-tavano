@@ -97,7 +97,7 @@
 @utility text-eyebrow {
   /* Inherits body font */
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   line-height: 1.4;

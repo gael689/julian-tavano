@@ -16,7 +16,7 @@ export type Prototipo = {
 
 export const PROTOTIPOS_DATA: Prototipo[] = [
   {
-    id: "norte",
+    id: "cabana-norte",
     type: "cabaña",
     name: "Norte",
     tagline: {
@@ -37,17 +37,17 @@ export const PROTOTIPOS_DATA: Prototipo[] = [
       en: "An intimate and efficient refuge designed to enjoy nature without giving up comfort. Every space is crafted so you feel at home, wherever you are.",
     },
     images: [
-      { src: "/prototipos/caba%C3%B1a-norte/imagenes/01.jpg", alt: "Cabaña Norte — exterior con deck en entorno natural", caption: "Exterior" },
-      { src: "/prototipos/caba%C3%B1a-norte/imagenes/02.jpg", alt: "Cabaña Norte — interior con luz natural", caption: "Interior" },
-      { src: "/prototipos/caba%C3%B1a-norte/imagenes/03.jpg", alt: "Cabaña Norte — cocina integrada", caption: "Cocina" },
-      { src: "/prototipos/caba%C3%B1a-norte/imagenes/04.jpg", alt: "Cabaña Norte — habitación principal", caption: "Habitación" },
-      { src: "/prototipos/caba%C3%B1a-norte/imagenes/05.jpg", alt: "Cabaña Norte — baño completo", caption: "Baño" },
-      { src: "/prototipos/caba%C3%B1a-norte/imagenes/06.jpg", alt: "Cabaña Norte — espacio exterior", caption: "Exterior" },
-      { src: "/prototipos/caba%C3%B1a-norte/imagenes/07.jpg", alt: "Cabaña Norte — planta de distribución", caption: "Planta" },
+      { src: "/prototipos/cabana-norte/imagenes/01.jpg", alt: "Cabaña Norte — exterior con deck en entorno natural", caption: "Exterior" },
+      { src: "/prototipos/cabana-norte/imagenes/02.jpg", alt: "Cabaña Norte — interior con luz natural", caption: "Interior" },
+      { src: "/prototipos/cabana-norte/imagenes/03.jpg", alt: "Cabaña Norte — cocina integrada", caption: "Cocina" },
+      { src: "/prototipos/cabana-norte/imagenes/04.jpg", alt: "Cabaña Norte — habitación principal", caption: "Habitación" },
+      { src: "/prototipos/cabana-norte/imagenes/05.jpg", alt: "Cabaña Norte — baño completo", caption: "Baño" },
+      { src: "/prototipos/cabana-norte/imagenes/06.jpg", alt: "Cabaña Norte — espacio exterior", caption: "Exterior" },
+      { src: "/prototipos/cabana-norte/imagenes/07.jpg", alt: "Cabaña Norte — planta de distribución", caption: "Planta" },
     ],
   },
   {
-    id: "brote",
+    id: "cabana-brote",
     type: "cabaña",
     name: "Brote",
     tagline: {
@@ -69,17 +69,17 @@ export const PROTOTIPOS_DATA: Prototipo[] = [
       en: "Compact and functional cabin, designed to enjoy nature with comfort and style. Light, warmth and connection in every corner.",
     },
     images: [
-      { src: "/prototipos/caba%C3%B1a-brote/imagenes/01.jpg", alt: "Cabaña Brote — exterior con deck y entorno natural", caption: "Exterior" },
-      { src: "/prototipos/caba%C3%B1a-brote/imagenes/02.jpg", alt: "Cabaña Brote — living-comedor con luz natural", caption: "Living · Comedor" },
-      { src: "/prototipos/caba%C3%B1a-brote/imagenes/03.jpg", alt: "Cabaña Brote — interior con ventanales al bosque", caption: "Interior" },
-      { src: "/prototipos/caba%C3%B1a-brote/imagenes/04.jpg", alt: "Cabaña Brote — habitación principal", caption: "Habitación" },
-      { src: "/prototipos/caba%C3%B1a-brote/imagenes/05.jpg", alt: "Cabaña Brote — baño con terminaciones modernas", caption: "Baño" },
-      { src: "/prototipos/caba%C3%B1a-brote/imagenes/06.jpg", alt: "Cabaña Brote — galería exterior", caption: "Galería" },
-      { src: "/prototipos/caba%C3%B1a-brote/imagenes/07.jpg", alt: "Cabaña Brote — planta aérea de distribución", caption: "Planta" },
+      { src: "/prototipos/cabana-brote/imagenes/01.jpg", alt: "Cabaña Brote — exterior con deck y entorno natural", caption: "Exterior" },
+      { src: "/prototipos/cabana-brote/imagenes/02.jpg", alt: "Cabaña Brote — living-comedor con luz natural", caption: "Living · Comedor" },
+      { src: "/prototipos/cabana-brote/imagenes/03.jpg", alt: "Cabaña Brote — interior con ventanales al bosque", caption: "Interior" },
+      { src: "/prototipos/cabana-brote/imagenes/04.jpg", alt: "Cabaña Brote — habitación principal", caption: "Habitación" },
+      { src: "/prototipos/cabana-brote/imagenes/05.jpg", alt: "Cabaña Brote — baño con terminaciones modernas", caption: "Baño" },
+      { src: "/prototipos/cabana-brote/imagenes/06.jpg", alt: "Cabaña Brote — galería exterior", caption: "Galería" },
+      { src: "/prototipos/cabana-brote/imagenes/07.jpg", alt: "Cabaña Brote — planta aérea de distribución", caption: "Planta" },
     ],
   },
   {
-    id: "coral",
+    id: "casa-coral",
     type: "casa",
     name: "Coral",
     tagline: {
@@ -110,7 +110,7 @@ export const PROTOTIPOS_DATA: Prototipo[] = [
     ],
   },
   {
-    id: "coihue",
+    id: "cabana-coihue",
     type: "cabaña",
     name: "Coihue",
     tagline: {
@@ -132,16 +132,16 @@ export const PROTOTIPOS_DATA: Prototipo[] = [
       en: "Designed to connect with the surroundings and share unforgettable moments. Spacious areas, natural light and a gallery with BBQ to enjoy all year round.",
     },
     images: [
-      { src: "/prototipos/caba%C3%B1a-coihue/imagenes/01.jpg", alt: "Cabaña Coihue — exterior con galería y parrilla", caption: "Exterior" },
-      { src: "/prototipos/caba%C3%B1a-coihue/imagenes/02.jpg", alt: "Cabaña Coihue — estar-comedor integrado", caption: "Estar · Comedor" },
-      { src: "/prototipos/caba%C3%B1a-coihue/imagenes/03.jpg", alt: "Cabaña Coihue — cocina con luz natural", caption: "Cocina" },
-      { src: "/prototipos/caba%C3%B1a-coihue/imagenes/04.jpg", alt: "Cabaña Coihue — habitación principal", caption: "Habitación 1" },
-      { src: "/prototipos/caba%C3%B1a-coihue/imagenes/05.jpg", alt: "Cabaña Coihue — habitación secundaria", caption: "Habitación 2" },
-      { src: "/prototipos/caba%C3%B1a-coihue/imagenes/06.jpg", alt: "Cabaña Coihue — planta de distribución", caption: "Planta" },
+      { src: "/prototipos/cabana-coihue/imagenes/01.jpg", alt: "Cabaña Coihue — exterior con galería y parrilla", caption: "Exterior" },
+      { src: "/prototipos/cabana-coihue/imagenes/02.jpg", alt: "Cabaña Coihue — estar-comedor integrado", caption: "Estar · Comedor" },
+      { src: "/prototipos/cabana-coihue/imagenes/03.jpg", alt: "Cabaña Coihue — cocina con luz natural", caption: "Cocina" },
+      { src: "/prototipos/cabana-coihue/imagenes/04.jpg", alt: "Cabaña Coihue — habitación principal", caption: "Habitación 1" },
+      { src: "/prototipos/cabana-coihue/imagenes/05.jpg", alt: "Cabaña Coihue — habitación secundaria", caption: "Habitación 2" },
+      { src: "/prototipos/cabana-coihue/imagenes/06.jpg", alt: "Cabaña Coihue — planta de distribución", caption: "Planta" },
     ],
   },
   {
-    id: "jarilla",
+    id: "casa-jarilla",
     type: "casa",
     name: "Jarilla",
     tagline: {

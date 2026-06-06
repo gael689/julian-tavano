@@ -30,7 +30,7 @@ function ProtoCard({ proto, index, wide }: { proto: Prototipo; index: number; wi
           alt={proto.images[0].alt}
           fill
           quality={85}
-          className="object-cover object-top"
+          className="object-cover object-center"
           sizes={wide ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
         />
 

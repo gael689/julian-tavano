@@ -27,7 +27,7 @@ function GalleryImg({
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
       transition={{ duration: 0.7, delay: index * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
-      className="relative overflow-hidden bg-charcoal-soft group"
+      className="relative overflow-hidden bg-charcoal-soft group h-full"
     >
       <motion.div
         className="absolute inset-0"
@@ -75,16 +75,16 @@ export default function ProtoGallery({ images }: { images: GalleryImage[] }) {
         <p className="text-eyebrow text-olive">{t('galeria')}</p>
       </div>
 
-      {/* Hero image — full width, aspect 3:2 */}
-      <div className="relative aspect-[3/2] overflow-hidden mb-2 md:mb-3">
+      {/* Hero image — full width, aspect 16:9 */}
+      <div className="relative aspect-[16/9] overflow-hidden mb-2 md:mb-3">
         <GalleryImg img={hero} index={0} sizes="100vw" priority />
       </div>
 
-      {/* 2-column grid — aspect 4:5 matches the portrait ratio of the images exactly */}
+      {/* 2-column grid — aspect square */}
       {gridImages.length > 0 && (
         <div className="grid grid-cols-2 gap-2 md:gap-3 mb-2 md:mb-3">
           {gridImages.map((img, i) => (
-            <div key={img.src} className="relative aspect-[4/5] overflow-hidden">
+            <div key={img.src} className="relative aspect-square overflow-hidden">
               <GalleryImg
                 img={img}
                 index={i + 1}
@@ -95,9 +95,9 @@ export default function ProtoGallery({ images }: { images: GalleryImage[] }) {
         </div>
       )}
 
-      {/* Last image when odd count — full width, aspect 3:2 */}
+      {/* Last image when odd count — full width, aspect 16:9 */}
       {lastSolo && (
-        <div className="relative aspect-[3/2] overflow-hidden">
+        <div className="relative aspect-[16/9] overflow-hidden">
           <GalleryImg
             img={lastSolo}
             index={rest.length}

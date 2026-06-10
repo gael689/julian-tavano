@@ -6,25 +6,12 @@
     "contacto": "Contact"
   },
   "hero": {
-    "carousel": {
-      "slide_1": {
-        "eyebrow": "PROTOTYPES",
-        "title": "Homes ready for your land.",
-        "subtitle": "Six models designed to build, ship and inhabit in three months.",
-        "cta": "See prototypes"
-      },
-      "slide_2": {
-        "eyebrow": "CUSTOM PROJECTS",
-        "title": "A home designed for you.",
-        "subtitle": "Signature architecture for clients in Argentina and abroad.",
-        "cta": "Learn more"
-      },
-      "slide_3": {
-        "eyebrow": "+50 WORKS",
-        "title": "Each pin is a home we built.",
-        "subtitle": "Monte Hermoso, the Atlantic coast, and beyond.",
-        "cta": "Explore the map"
-      }
+    "title": "Architecture that respects the place it's built in.",
+    "subtitle": "Ready-to-build prototypes, custom projects, and 50+ built works along the Atlantic coast.",
+    "ctas": {
+      "prototipos": "View prototypes",
+      "aMedida": "Custom projects",
+      "obras": "View works"
     }
   },
   "prototipos": {
@@ -106,6 +93,10 @@
     "cta_title": "Start your project today.",
     "cta_wa": "INQUIRE ON WHATSAPP →",
     "galeria": "GALLERY",
+    "galeria_hint": "Tap an image to view it larger",
+    "lightbox_close": "Close",
+    "lightbox_prev": "Previous",
+    "lightbox_next": "Next",
     "highlights": [
       "Design in harmony with nature",
       "Ideal for rest, holiday rental or permanent residence",

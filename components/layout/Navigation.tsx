@@ -13,7 +13,7 @@ export default function Navigation() {
   const t = useTranslations('nav');
   const pathname = usePathname();
   const isObrasPage = pathname === '/obras';
-  
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,6 +22,8 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (isObrasPage) return null;
 
   const links = [
     { href: '/#prototipos', label: t('prototipos') },

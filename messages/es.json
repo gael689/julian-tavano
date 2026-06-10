@@ -6,25 +6,12 @@
     "contacto": "Contacto"
   },
   "hero": {
-    "carousel": {
-      "slide_1": {
-        "eyebrow": "PROTOTIPOS",
-        "title": "Casas listas para tu terreno.",
-        "subtitle": "Seis modelos diseñados para construir, trasladar y habitar en tres meses.",
-        "cta": "Ver prototipos"
-      },
-      "slide_2": {
-        "eyebrow": "PROYECTOS A MEDIDA",
-        "title": "Tu casa, diseñada para vos.",
-        "subtitle": "Diseño de autor para clientes en Argentina y el exterior.",
-        "cta": "Conocer más"
-      },
-      "slide_3": {
-        "eyebrow": "+50 OBRAS",
-        "title": "Cada pin es una casa construida.",
-        "subtitle": "Monte Hermoso, la costa atlántica y más allá.",
-        "cta": "Explorar el mapa"
-      }
+    "title": "Arquitectura que respeta el lugar donde se construye.",
+    "subtitle": "Prototipos listos para tu terreno, proyectos a medida y más de 50 obras construidas en la costa atlántica.",
+    "ctas": {
+      "prototipos": "Ver prototipos",
+      "aMedida": "Proyectos a medida",
+      "obras": "Ver obras"
     }
   },
   "prototipos": {
@@ -106,6 +93,10 @@
     "cta_title": "Empezá tu proyecto hoy.",
     "cta_wa": "CONSULTAR POR WHATSAPP →",
     "galeria": "GALERÍA",
+    "galeria_hint": "Tocá una imagen para verla en grande",
+    "lightbox_close": "Cerrar",
+    "lightbox_prev": "Anterior",
+    "lightbox_next": "Siguiente",
     "highlights": [
       "Diseño en armonía con la naturaleza",
       "Ideal para descanso, alquiler turístico o vivienda permanente",

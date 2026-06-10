@@ -8,6 +8,7 @@ import ProtoHeroSection from '@/components/proto/ProtoHeroSection';
 import ServiceTabs from '@/components/proto/ServiceTabs';
 import ProtoGallery from '@/components/proto/ProtoGallery';
 import ScrollReset from '@/components/proto/ScrollReset';
+import LightboxProvider from '@/components/proto/LightboxProvider';
 import JsonLd from '@/components/seo/JsonLd';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jtarquitectura.com';
@@ -133,6 +134,8 @@ export default async function PrototipoPage({
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={productSchema} />
 
+      <LightboxProvider images={images}>
+
       {/* ── CINEMATIC HERO (split) ───────────────────────── */}
       <ProtoHeroSection
         label={typeLabel}
@@ -192,6 +195,8 @@ export default async function PrototipoPage({
 
       {/* ── CINEMATIC GALLERY ────────────────────────────── */}
       <ProtoGallery images={images} />
+
+      </LightboxProvider>
 
       {/* ── BOTTOM CTA ───────────────────────────────────── */}
       <div className="bg-charcoal">

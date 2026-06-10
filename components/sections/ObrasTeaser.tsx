@@ -113,7 +113,7 @@ export default function ObrasTeaser() {
           >
             <Link
               href="/obras"
-              className="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-olive text-cream text-sm font-bold tracking-widest hover:bg-olive-deep transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-cream text-charcoal text-sm font-bold tracking-widest hover:bg-cream-light transition-colors whitespace-nowrap shadow-[0_4px_16px_rgba(0,0,0,0.25)]"
             >
               {t('map_cta')}
               <span aria-hidden="true">→</span>

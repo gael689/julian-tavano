@@ -1,47 +1,43 @@
-# JT Arquitectura — Resumen del sitio web
+# Demo web — Julián Tavano, Arquitecto
 
-## Qué se hizo
-
-Se desarrolló el sitio web completo de **JT Arquitectura**, diseñado para presentar el estudio, los proyectos y los prototipos de vivienda de manera profesional y atractiva.
+Esto es una primera versión del sitio para que puedas recorrerlo, ver cómo quedó y contarme qué cambiarías. Nada está cerrado todavía.
 
 ---
 
-## Estructura del sitio
+## Cómo se pensó
 
-El sitio tiene tres páginas principales:
+La idea fue armar un sitio que transmita seriedad y calidez a la vez. Que no parezca un catálogo genérico, sino que tenga personalidad propia. El foco está puesto en mostrar el trabajo real: las obras construidas, los prototipos disponibles y la posibilidad de encargar un proyecto a medida.
 
-**1. Inicio (`/`)**
-La página principal recorre el estudio de arriba a abajo con las siguientes secciones:
-- **Intro animada** — una pantalla de bienvenida con el logo y el nombre del estudio.
-- **Hero** — un carrusel de imágenes de impacto que resume las tres grandes propuestas: prototipos, proyectos a medida y obras realizadas.
-- **Prototipos** — grilla con las cinco viviendas disponibles (cabañas y casas), cada una con imagen, superficie y acceso a su página detallada.
-- **Proyectos a medida** — presentación del servicio de diseño personalizado.
-- **Nosotros** — breve presentación del estudio y su filosofía.
-- **Contacto** — formulario de contacto y datos de WhatsApp.
+La navegación es simple y en una sola dirección: el visitante entra, baja por la página y encuentra todo lo que necesita para tomar una decisión o hacer una consulta.
 
-**2. Obras (`/obras`)**
-Mapa interactivo con todos los proyectos construidos geolocalizados. Al hacer clic en cada marcador se despliega información y fotos del proyecto. Pensado para transmitir trayectoria y experiencia real.
+---
 
-**3. Prototipos (`/prototipos/[nombre]`)**
-Cada prototipo tiene su propia página con galería de imágenes, ficha técnica (superficies, dormitorios, baños), descripción, usos sugeridos y llamada directa a WhatsApp para consultar. Las URLs son claras y descriptivas: `/prototipos/casa-jarilla`, `/prototipos/cabana-norte`, etc.
+## Qué tiene el sitio
+
+**Página principal**
+Recorre el estudio de arriba a abajo con estas secciones:
+- Intro con el nombre y logo
+- Carrusel de imágenes de impacto con las tres propuestas principales
+- Grilla de prototipos disponibles (cabañas y casas)
+- Presentación de proyectos a medida
+- Presentación del estudio
+- Sección de contacto con formulario y WhatsApp
+
+**Mapa de obras (`/obras`)**
+Un mapa interactivo donde están marcados todos los proyectos construidos. Al hacer clic en cada uno se pueden ver fotos y una descripción. Sirve para mostrar trayectoria de forma concreta.
+
+**Páginas de prototipos**
+Cada prototipo tiene su propia página con galería de fotos, ficha técnica (superficie, dormitorios, baños), descripción y un botón directo a WhatsApp para consultar. Las direcciones son del tipo `/prototipos/casa-jarilla`.
 
 ---
 
 ## Idiomas
 
-El sitio está disponible en **español e inglés**. El idioma se detecta automáticamente y puede cambiarse desde el menú. La URL en inglés agrega el prefijo `/en/`.
+El sitio está en español e inglés. El idioma cambia desde el menú y la URL se adapta automáticamente.
 
 ---
 
-## Últimos ajustes realizados
+## Lo que falta definir
 
-- Se corrigió un problema que impedía ver las imágenes de los prototipos al subir el sitio al hosting (las carpetas usaban un carácter especial que el servidor no interpretaba bien).
-- Las URLs de cada prototipo ahora incluyen el nombre completo: `casa-jarilla`, `cabana-norte`, etc.
-- Las imágenes en las tarjetas de prototipos ahora se muestran centradas correctamente.
-- El texto "CONTACTO" en la sección de contacto se agrandó levemente.
-
----
-
-## Pendiente
-
-- **Formulario de contacto**: el diseño del formulario está listo, pero el envío de emails todavía no está conectado. Se puede integrar con un servicio de envío (se recomienda hablar con el desarrollador para definir cuál usar).
+- **Envío del formulario de contacto** — el formulario está diseñado pero todavía no envía emails. Hay que decidir a qué dirección llegan los mensajes.
+- **Cualquier ajuste de contenido** — textos, imágenes, orden de secciones, colores: todo es modificable en base a tu feedback.

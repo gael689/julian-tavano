@@ -11,7 +11,7 @@ import type { Metadata, Viewport } from 'next';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['200', '300', '400'],
+  weight: ['200', '300', '400', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 });

@@ -27,6 +27,9 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
   return (
     <section className="relative bg-charcoal overflow-hidden">
 
+      {/* Top scrim — ensures logo/navbar always readable over hero image */}
+      <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-black/75 to-transparent pointer-events-none z-[5]" />
+
       {/* ── Desktop only: absolute image on right half ── */}
       <div className="hidden lg:block absolute inset-y-0 right-0 w-[55%]">
         <motion.div
@@ -83,10 +86,10 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
         {/* Bottom scrim for title legibility */}
         <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent pointer-events-none" />
         {/* Top scrim for back link */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-charcoal/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-charcoal/80 to-transparent pointer-events-none" />
 
-        {/* Back link — top left over image, clears navbar */}
-        <div className="absolute top-0 left-0 right-0 z-10 container-layout" style={{ paddingTop: 'calc(var(--nav-h, 4.5rem) + 1rem)' }}>
+        {/* Back link — top left over image, clears navbar + extra 5dvh */}
+        <div className="absolute top-0 left-0 right-0 z-10 container-layout" style={{ paddingTop: 'calc(var(--nav-h, 4.5rem) + 1rem + 5dvh)' }}>
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,7 +97,7 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
           >
             <Link
               href="/#prototipos"
-              className="inline-flex items-center gap-2 text-cream/60 hover:text-cream text-xs font-bold tracking-widest uppercase transition-colors"
+              className="inline-flex items-center gap-2 text-cream text-xs font-bold tracking-widest uppercase transition-all bg-black/35 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-black/50"
             >
               {t('back')}
             </Link>
@@ -103,28 +106,50 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
 
         {/* Title overlaid at bottom-left + scroll indicator bottom-right */}
         <div className="absolute bottom-0 left-0 right-0 z-10 container-layout pb-8 flex items-end justify-between gap-4">
-          <div className="overflow-hidden">
-            <motion.span
-              initial={{ y: '110%' }}
-              animate={{ y: '0%' }}
-              transition={{ duration: 0.85, delay: 0.5, ease }}
-              className="block text-cream font-bold leading-none"
-              style={{ fontFamily: "'Century Gothic', Futura, sans-serif", fontSize: TITLE_SIZE_MOBILE, letterSpacing: '-0.01em' }}
-            >
-              {label}
-            </motion.span>
+          {/* Title stacked as a single column */}
+          <div>
+            <div className="overflow-hidden">
+              <motion.span
+                initial={{ y: '110%' }}
+                animate={{ y: '0%' }}
+                transition={{ duration: 0.85, delay: 0.5, ease }}
+                className="block text-cream font-bold leading-none"
+                style={{ fontFamily: "'Century Gothic', Futura, sans-serif", fontSize: TITLE_SIZE_MOBILE, letterSpacing: '-0.01em' }}
+              >
+                {label}
+              </motion.span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span
+                initial={{ y: '110%' }}
+                animate={{ y: '0%' }}
+                transition={{ duration: 0.85, delay: 0.62, ease }}
+                className="block text-cream font-bold leading-none"
+                style={{ fontFamily: "'Century Gothic', Futura, sans-serif", fontSize: TITLE_SIZE_MOBILE, letterSpacing: '-0.01em' }}
+              >
+                {name}
+              </motion.span>
+            </div>
           </div>
-          <div className="overflow-hidden">
-            <motion.span
-              initial={{ y: '110%' }}
-              animate={{ y: '0%' }}
-              transition={{ duration: 0.85, delay: 0.62, ease }}
-              className="block text-cream font-bold leading-none"
-              style={{ fontFamily: "'Century Gothic', Futura, sans-serif", fontSize: TITLE_SIZE_MOBILE, letterSpacing: '-0.01em' }}
+
+          {/* Scroll indicator — bottom right */}
+          <motion.a
+            href="#descripcion"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
+            className="flex items-center gap-1.5 shrink-0 pb-1"
+          >
+            <span
+              className="text-cream/50 font-bold uppercase whitespace-nowrap"
+              style={{ fontSize: '8px', letterSpacing: '0.18em' }}
             >
-              {name}
-            </motion.span>
-          </div>
+              {t('scroll_hint')}
+            </span>
+            <span className="arrow-float text-cream/45 leading-none inline-block" style={{ fontSize: '10px' }}>
+              ↓
+            </span>
+          </motion.a>
         </div>
       </div>
 
@@ -158,19 +183,6 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.15 }}
-        >
-          <a
-            href="#descripcion"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-olive text-cream text-xs font-bold tracking-widest hover:bg-olive-deep transition-colors"
-          >
-            {t('conoce_mas')}
-            <span className="text-base leading-none">↓</span>
-          </a>
-        </motion.div>
       </div>
 
       {/* ── Desktop only: text content (left side, full height) ── */}

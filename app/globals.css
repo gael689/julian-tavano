@@ -166,3 +166,13 @@
 .scroll-line-fill {
   animation: scroll-line 2.2s ease-in-out infinite;
 }
+
+/* ── Proto Scroll Arrow ─────────────────────────── */
+@keyframes arrow-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(4px); }
+}
+
+.arrow-float {
+  animation: arrow-float 1.4s ease-in-out infinite;
+}

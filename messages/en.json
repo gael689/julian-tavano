@@ -84,6 +84,7 @@
     "type_cabana": "Cabin",
     "type_casa": "House",
     "back": "← Prototypes",
+    "scroll_hint": "Scroll to explore",
     "conoce_mas": "LEARN MORE",
     "descripcion": "DESCRIPTION",
     "caracteristicas": "FEATURES",

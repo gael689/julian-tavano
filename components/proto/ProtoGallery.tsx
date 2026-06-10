@@ -86,9 +86,9 @@ export default function ProtoGallery({ images }: { images: GalleryImage[] }) {
   return (
     <div className="bg-cream pt-6 pb-4 px-4 md:px-6">
       <div className="mb-4 px-1 flex items-baseline justify-between gap-4 flex-wrap">
-        <p className="text-eyebrow text-olive">{t('galeria')}</p>
-        <p className="text-[11px] md:text-xs text-charcoal/45 flex items-center gap-1.5">
-          <Maximize2 size={12} className="text-olive shrink-0" />
+        <p className="text-xs font-bold tracking-[0.25em] uppercase text-charcoal/80">{t('galeria')}</p>
+        <p className="text-[11px] md:text-xs text-charcoal/65 font-medium flex items-center gap-1.5">
+          <Maximize2 size={13} className="text-olive shrink-0" />
           {t('galeria_hint')}
         </p>
       </div>

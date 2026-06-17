@@ -16,6 +16,37 @@ export type Prototipo = {
 
 export const PROTOTIPOS_DATA: Prototipo[] = [
   {
+    id: "casa-cardon",
+    type: "casa",
+    name: "Cardón",
+    tagline: {
+      es: "Armonía. Simpleza. Esencial.",
+      en: "Harmony. Simplicity. Essential.",
+    },
+    specs: {
+      coveredArea: 25,
+      bedrooms: 1,
+      bathrooms: 1,
+      features: {
+        es: "Cocina, comedor y dormitorio integrados · Espacio exterior para disfrutar el entorno",
+        en: "Kitchen, dining and bedroom integrated · Outdoor space to enjoy the surroundings",
+      },
+    },
+    description: {
+      es: "Un espacio integrado que combina diseño y funcionalidad para ofrecerte todo lo que necesitás, en un ambiente cálido y en conexión con la naturaleza.",
+      en: "An integrated space that combines design and functionality to give you everything you need, in a warm environment connected to nature.",
+    },
+    images: [
+      { src: "/prototipos/casa-cardon/imagenes/01.jpg", alt: "Casa Cardón — exterior nocturno con deck en entorno de pinos", caption: "Exterior" },
+      { src: "/prototipos/casa-cardon/imagenes/02.jpg", alt: "Casa Cardón — ambiente integrado con dormitorio y cocina", caption: "Ambiente integrado" },
+      { src: "/prototipos/casa-cardon/imagenes/03.jpg", alt: "Casa Cardón — dormitorio con ventana circular al bosque", caption: "Dormitorio" },
+      { src: "/prototipos/casa-cardon/imagenes/04.jpg", alt: "Casa Cardón — cocina con barra y detalles en madera", caption: "Cocina" },
+      { src: "/prototipos/casa-cardon/imagenes/05.jpg", alt: "Casa Cardón — baño completo con ducha y espejo circular", caption: "Baño" },
+      { src: "/prototipos/casa-cardon/imagenes/06.jpg", alt: "Casa Cardón — planta aérea con deck y distribución", caption: "Planta" },
+      { src: "/prototipos/casa-cardon/imagenes/07.jpg", alt: "Casa Cardón — exterior diurno en entorno de dunas y pinos", caption: "Exterior" },
+    ],
+  },
+  {
     id: "cabana-norte",
     type: "cabaña",
     name: "Norte",

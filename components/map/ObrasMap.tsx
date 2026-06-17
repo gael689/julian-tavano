@@ -3,8 +3,6 @@
 import { useEffect, useRef } from 'react';
 import { Obra } from '@/lib/data/obras';
 import 'leaflet/dist/leaflet.css';
-import 'leaflet.markercluster/dist/MarkerCluster.css';
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 interface ObrasMapProps {
   obras: Obra[];
@@ -61,7 +59,6 @@ export default function ObrasMap({
 
     const init = async () => {
       const L = (await import('leaflet')).default;
-      await import('leaflet.markercluster');
 
       const map = L.map(mapRef.current!, {
         center: [-38.988, -61.25],
@@ -75,34 +72,7 @@ export default function ObrasMap({
         maxZoom: 19,
       }).addTo(map);
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const clusterGroup = (L as any).markerClusterGroup({
-        showCoverageOnHover: false,
-        maxClusterRadius: 40,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        iconCreateFunction: (cluster: any) => {
-          const count = cluster.getChildCount();
-          return L.divIcon({
-            html: `<div style="
-              background: #3A4A2A;
-              color: white;
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border: 2px solid white;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-family: sans-serif;
-              font-size: 13px;
-              font-weight: 700;
-              box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            ">${count}</div>`,
-            className: '',
-            iconSize: [36, 36],
-          });
-        },
-      });
+      const clusterGroup = L.layerGroup();
 
       // Override Leaflet attribution: tiny, olive-soft, bottom-left
       const attrStyle = document.createElement('style');

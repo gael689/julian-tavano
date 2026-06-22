@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 import ProtoHeroSection from '@/components/proto/ProtoHeroSection';
 import ServiceTabs from '@/components/proto/ServiceTabs';
 import ProtoGallery from '@/components/proto/ProtoGallery';
+import MorePrototipos from '@/components/proto/MorePrototipos';
 import ScrollReset from '@/components/proto/ScrollReset';
 import LightboxProvider from '@/components/proto/LightboxProvider';
 import JsonLd from '@/components/seo/JsonLd';
@@ -197,6 +198,9 @@ export default async function PrototipoPage({
       <ProtoGallery images={images} />
 
       </LightboxProvider>
+
+      {/* ── OTROS PROTOTIPOS ─────────────────────────────── */}
+      <MorePrototipos currentSlug={slug} />
 
       {/* ── BOTTOM CTA ───────────────────────────────────── */}
       <div className="bg-charcoal">

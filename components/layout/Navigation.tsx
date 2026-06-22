@@ -18,7 +18,7 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -46,21 +46,41 @@ export default function Navigation() {
         style={{ '--nav-h': scrolled && !isObrasPage ? '4rem' : '7rem' } as React.CSSProperties}
       >
         <div className="container-layout flex items-center justify-between">
-          <Link href="/" className="relative z-50 flex items-center gap-2">
-            <Image 
-              src="/logo.png" 
-              alt="JT Arquitectura" 
-              width={200} 
+          <Link href="/" className="relative z-50 flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="JT Arquitectura"
+              width={200}
               height={200}
               quality={100}
               priority
               className={clsx(
-                "transition-all duration-300 object-contain origin-left", 
-                scrolled 
-                  ? "h-16 md:h-16 w-auto brightness-0" 
+                "transition-all duration-300 object-contain origin-left",
+                scrolled
+                  ? "h-16 md:h-16 w-auto brightness-0"
                   : "h-16 md:h-20 w-auto brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
-              )} 
+              )}
             />
+            <div className={clsx(
+              "hidden sm:flex flex-col leading-tight transition-colors duration-300 border-l pl-3",
+              scrolled ? "border-olive-soft/40" : "border-cream/30"
+            )}>
+              <span
+                className={clsx(
+                  "text-sm md:text-base tracking-widest uppercase font-semibold transition-colors duration-300",
+                  scrolled ? "text-olive-deep" : "text-cream drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]"
+                )}
+                style={{ fontFamily: "'Century Gothic', sans-serif" }}
+              >
+                Julián Tavano
+              </span>
+              <span className={clsx(
+                "text-eyebrow text-[9px] tracking-[0.25em] font-medium transition-colors duration-300",
+                scrolled ? "text-olive-soft" : "text-cream/70"
+              )}>
+                Arquitecto
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

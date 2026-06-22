@@ -6,12 +6,12 @@
     "contacto": "Contacto"
   },
   "hero": {
-    "title": "Arquitectura que respeta el lugar donde se construye.",
-    "subtitle": "Prototipos listos para tu terreno, proyectos a medida y más de 50 obras construidas en la costa atlántica.",
+    "title": "Arquitectura que se adapta a vos.",
+    "subtitle": "Proyectos a medida, también prototipos que se adaptan a tu terreno, más de 50 obras construidas.",
     "ctas": {
       "prototipos": "Ver prototipos",
       "aMedida": "Proyectos a medida",
-      "obras": "Ver plano de obras construidas"
+      "obras": "Ver mapa de obras construidas"
     }
   },
   "prototipos": {
@@ -95,6 +95,8 @@
     "cta_wa": "CONSULTAR POR WHATSAPP →",
     "galeria": "GALERÍA",
     "galeria_hint": "Tocá una imagen para verla en grande",
+    "otros_eyebrow": "PROTOTIPOS",
+    "otros_titulo": "Otros prototipos",
     "lightbox_close": "Cerrar",
     "lightbox_prev": "Anterior",
     "lightbox_next": "Siguiente",

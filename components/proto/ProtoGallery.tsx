@@ -53,8 +53,8 @@ function GalleryImg({
         />
       </motion.div>
 
-      {/* Zoom affordance — visible on hover (desktop) and always faintly on mobile */}
-      <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/45 backdrop-blur-md text-white flex items-center justify-center opacity-70 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+      {/* Zoom affordance */}
+      <div className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/45 backdrop-blur-md text-white flex items-center justify-center opacity-70 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
         <Maximize2 size={14} />
       </div>
 

@@ -6,8 +6,8 @@
     "contacto": "Contact"
   },
   "hero": {
-    "title": "Architecture that respects the place it's built in.",
-    "subtitle": "Ready-to-build prototypes, custom projects, and 50+ built works along the Atlantic coast.",
+    "title": "Architecture that adapts to you.",
+    "subtitle": "Custom projects, plus prototypes that adapt to your land, and 50+ completed works.",
     "ctas": {
       "prototipos": "View prototypes",
       "aMedida": "Custom projects",
@@ -95,6 +95,8 @@
     "cta_wa": "INQUIRE ON WHATSAPP →",
     "galeria": "GALLERY",
     "galeria_hint": "Tap an image to view it larger",
+    "otros_eyebrow": "PROTOTYPES",
+    "otros_titulo": "More prototypes",
     "lightbox_close": "Close",
     "lightbox_prev": "Previous",
     "lightbox_next": "Next",

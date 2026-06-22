@@ -1,24 +1,26 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-// No sticky — the hero scrolls normally but fades + scales as it exits the viewport.
-// This avoids the "dead scroll" problem of position:sticky with extra height.
+// Shared with Navigation.tsx — both effects kick in at the same scroll position.
+const SCROLL_THRESHOLD = 80;
+
 export default function StickyFadeWrapper({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const [heroH, setHeroH] = useState(900);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  });
+  useEffect(() => {
+    setHeroH(window.innerHeight);
+  }, []);
 
-  const scale        = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
-  const opacity      = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const borderRadius = useTransform(scrollYProgress, [0, 0.6], ['0px', '16px']);
+  const { scrollY } = useScroll();
+
+  const scale        = useTransform(scrollY, [SCROLL_THRESHOLD, heroH], [1, 0.9]);
+  const opacity      = useTransform(scrollY, [SCROLL_THRESHOLD, heroH * 0.6], [1, 0]);
+  const borderRadius = useTransform(scrollY, [SCROLL_THRESHOLD, heroH * 0.6], ['0px', '16px']);
 
   return (
-    <div ref={ref}>
+    <div>
       <motion.div
         style={{
           scale,

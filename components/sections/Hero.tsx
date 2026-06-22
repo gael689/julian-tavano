@@ -22,7 +22,7 @@ export default function Hero() {
           style={{ transformOrigin: 'center center' }}
         >
           <Image
-            src="/prototipos/cabana-coihue/imagenes/01.jpg"
+            src="/prototipos/cabana-coihue/imagenes/01_hero.jpg"
             alt=""
             fill
             priority

@@ -62,7 +62,7 @@ export default function Navigation() {
               )}
             />
             <div className={clsx(
-              "hidden sm:flex flex-col leading-tight transition-colors duration-300 border-l pl-3",
+              "flex flex-col leading-tight transition-colors duration-300 border-l pl-3",
               scrolled ? "border-olive-soft/40" : "border-cream/30"
             )}>
               <span

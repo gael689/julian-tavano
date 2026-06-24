@@ -3,7 +3,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef, useEffect, useState } from 'react';
 
 function useTypewriter(text: string, isActive: boolean, speed = 70) {

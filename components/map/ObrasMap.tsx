@@ -56,6 +56,7 @@ export default function ObrasMap({
   useEffect(() => {
     if (isInitialized.current || !mapRef.current) return;
     isInitialized.current = true;
+    const markers = markersRef.current;
 
     const init = async () => {
       const L = (await import('leaflet')).default;
@@ -128,7 +129,7 @@ export default function ObrasMap({
         leafletMapRef.current.remove();
         leafletMapRef.current = null;
         clusterGroupRef.current = null;
-        markersRef.current.clear();
+        markers.clear();
         isInitialized.current = false;
       }
     };

@@ -26,10 +26,12 @@ export default function Navigation() {
   if (isObrasPage) return null;
 
   const links = [
-    { href: '/#prototipos', label: t('prototipos') },
-    { href: '/obras', label: t('obras') },
-    { href: '/#sobre', label: t('sobre') },
-    { href: '/#contacto', label: t('contacto') },
+    { href: '/#modelos',                  label: t('prototipos') },
+    { href: '/#proyectos-personalizados', label: t('personalizados') },
+    { href: '/obras',                     label: t('obras'), newTab: true },
+    { href: '/#inversion',                label: t('inversion') },
+    { href: '/#sobre',                    label: t('sobre') },
+    { href: '/#contacto',                 label: t('contacto') },
   ];
 
   return (
@@ -86,18 +88,21 @@ export default function Navigation() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             <nav className="flex gap-6">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={clsx(
-                    "text-eyebrow font-bold transition-colors tracking-widest",
-                    scrolled && !isObrasPage ? "text-olive hover:text-olive-deep" : "text-cream hover:text-cream-light drop-shadow-md"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {links.map((link) => {
+                const cls = clsx(
+                  "text-eyebrow font-bold transition-colors tracking-widest",
+                  scrolled && !isObrasPage ? "text-olive hover:text-olive-deep" : "text-cream hover:text-cream-light drop-shadow-md"
+                );
+                return link.newTab ? (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link key={link.href} href={link.href} className={cls}>
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
             <div className={clsx("w-px h-4 transition-colors", scrolled ? "bg-concrete" : "bg-cream/30")} />
             <LanguageToggle />
@@ -139,13 +144,25 @@ export default function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + i * 0.05, duration: 0.3 }}
                   >
-                    <Link
-                      href={link.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="text-display-l text-olive-deep"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.newTab ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMenuOpen(false)}
+                        className="text-display-l text-olive-deep"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="text-display-l text-olive-deep"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </nav>

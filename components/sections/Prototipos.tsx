@@ -14,7 +14,7 @@ export default function Prototipos() {
   const isOdd = PROTOTIPOS_DATA.length % 2 !== 0;
 
   return (
-    <section id="prototipos" className="bg-cream section-padding">
+    <section id="modelos" className="bg-cream section-padding">
       <div className="container-layout">
         {/* Header */}
         <motion.div
@@ -40,7 +40,7 @@ export default function Prototipos() {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-6">
           {PROTOTIPOS_DATA.map((proto, i) => {
             const isLast = i === PROTOTIPOS_DATA.length - 1;
             return (
@@ -49,6 +49,7 @@ export default function Prototipos() {
                 proto={proto}
                 index={i}
                 wide={isOdd && isLast}
+                mobileCompact
               />
             );
           })}

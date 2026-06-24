@@ -34,10 +34,12 @@ export default function Footer() {
   if (pathname === '/obras') return null;
 
   const links = [
-    { href: '/#prototipos', label: navT('prototipos') },
-    { href: '/obras', label: navT('obras') },
-    { href: '/#sobre', label: navT('sobre') },
-    { href: '/#contacto', label: navT('contacto') },
+    { href: '/#modelos',                  label: navT('prototipos') },
+    { href: '/#proyectos-personalizados', label: navT('personalizados') },
+    { href: '/obras',                     label: navT('obras'), newTab: true },
+    { href: '/#inversion',                label: navT('inversion') },
+    { href: '/#sobre',                    label: navT('sobre') },
+    { href: '/#contacto',                 label: navT('contacto') },
   ];
 
   return (
@@ -63,13 +65,25 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <nav className="flex flex-col gap-3">
               {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-body font-normal text-charcoal/80 hover:text-olive-deep transition-colors"
-                >
-                  {link.label}
-                </Link>
+                link.newTab ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body font-normal text-charcoal/80 hover:text-olive-deep transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-body font-normal text-charcoal/80 hover:text-olive-deep transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </nav>
           </div>

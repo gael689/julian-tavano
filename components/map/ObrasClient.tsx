@@ -21,10 +21,15 @@ export default function ObrasClient() {
   const [activeObraId, setActiveObraId]   = useState<string | null>(null);
   const [hoveredObraId, setHoveredObraId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery]     = useState('');
-  const [listOpen, setListOpen]           = useState(true);
+  const [listOpen, setListOpen]           = useState(false);
   const lenis = useLenis();
   const mobileScrollerRef  = useRef<HTMLDivElement>(null);
   const desktopScrollerRef = useRef<HTMLDivElement>(null);
+
+  // Desktop opens the list by default; mobile starts with the map
+  useEffect(() => {
+    if (window.innerWidth >= 768) setListOpen(true);
+  }, []);
 
   const filteredObras = OBRAS.filter(o =>
     o.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

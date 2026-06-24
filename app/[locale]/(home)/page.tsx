@@ -6,6 +6,7 @@ import DarkenOnScrollOut from '@/components/ui/DarkenOnScrollOut';
 import Prototipos from '@/components/sections/Prototipos';
 import ObrasTeaser from '@/components/sections/ObrasTeaser';
 import CustomProjects from '@/components/sections/CustomProjects';
+import Inversion from '@/components/sections/Inversion';
 import About from '@/components/sections/About';
 import Contact from '@/components/sections/Contact';
 import JsonLd from '@/components/seo/JsonLd';
@@ -25,8 +26,8 @@ export async function generateMetadata({
     ? 'Inicio — Viviendas modulares y proyectos a medida'
     : 'Home — Modular homes and custom architectural design';
   const description = isEs
-    ? 'Descubrí los prototipos de viviendas modulares de JT Arquitectura: cabañas y casas prefabricadas listas en 3 meses. También proyectos a medida en Monte Hermoso y toda Argentina.'
-    : 'Explore JT Architecture\'s modular housing prototypes: prefabricated cabins and houses ready in 3 months. Custom design projects across Argentina.';
+    ? 'Descubrí los modelos de casas de JT Arquitectura: cabañas y casas prefabricadas listas en 3 meses. También proyectos a medida en Monte Hermoso y toda Argentina.'
+    : 'Explore JT Architecture\'s house models: prefabricated cabins and houses ready in 3 months. Custom design projects across Argentina.';
 
   return {
     title,
@@ -81,7 +82,7 @@ export default async function HomePage({
             name: '¿Es posible hacer un proyecto arquitectónico a medida?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Sí. Además de los prototipos, JT Arquitectura ofrece diseño arquitectónico a medida respetando las condiciones del terreno, el entorno y los requerimientos del cliente.',
+              text: 'Sí. Además de los modelos de casas, JT Arquitectura ofrece diseño arquitectónico a medida respetando las condiciones del terreno, el entorno y los requerimientos del cliente.',
             },
           },
           {
@@ -123,7 +124,7 @@ export default async function HomePage({
             name: 'Is it possible to commission a custom architectural project?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Yes. In addition to prototypes, JT Architecture offers custom architectural design tailored to the land, surroundings, and client requirements.',
+              text: 'Yes. In addition to house models, JT Architecture offers custom architectural design tailored to the land, surroundings, and client requirements.',
             },
           },
           {
@@ -140,12 +141,12 @@ export default async function HomePage({
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: isEs ? 'Prototipos de Viviendas — JT Arquitectura' : 'Housing Prototypes — JT Architecture',
+    name: isEs ? 'Modelos de Casas — JT Arquitectura' : 'House Models — JT Architecture',
     itemListElement: PROTOTIPOS_DATA.map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: `${p.type === 'casa' ? (isEs ? 'Casa' : 'House') : (isEs ? 'Cabaña' : 'Cabin')} ${p.name}`,
-      url: `${SITE_URL}${isEs ? '' : '/en'}/prototipos/${p.id}`,
+      url: `${SITE_URL}${isEs ? '' : '/en'}/modelos/${p.id}`,
       description: isEs ? p.description.es : p.description.en,
     })),
   };
@@ -165,6 +166,7 @@ export default async function HomePage({
       <DarkenOnScrollOut variant="lighten">
         <CustomProjects />
       </DarkenOnScrollOut>
+      <Inversion />
       <DarkenOnScrollOut startAt={0.35}>
         <About />
       </DarkenOnScrollOut>

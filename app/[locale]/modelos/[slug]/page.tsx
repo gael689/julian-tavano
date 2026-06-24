@@ -31,7 +31,7 @@ export async function generateMetadata({
   const typeLabel = proto.type === 'casa' ? t('type_casa') : t('type_cabana');
   const title = `${typeLabel} ${proto.name}`;
   const description = proto.description[lang] ?? proto.description.es;
-  const canonical = `${SITE_URL}${locale === 'en' ? '/en' : ''}/prototipos/${proto.id}`;
+  const canonical = `${SITE_URL}${locale === 'en' ? '/en' : ''}/modelos/${proto.id}`;
   const ogImage = `${SITE_URL}${proto.images[0].src}`;
 
   return {
@@ -52,8 +52,8 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        es: `${SITE_URL}/prototipos/${proto.id}`,
-        en: `${SITE_URL}/en/prototipos/${proto.id}`,
+        es: `${SITE_URL}/modelos/${proto.id}`,
+        en: `${SITE_URL}/en/modelos/${proto.id}`,
       },
     },
   };
@@ -92,14 +92,14 @@ export default async function PrototipoPage({
     { Icon: BuildingStorefrontIcon, label: t('uso.alquiler')  },
   ];
 
-  const pageUrl = `${SITE_URL}${lang === 'en' ? '/en' : ''}/prototipos/${proto.id}`;
+  const pageUrl = `${SITE_URL}${lang === 'en' ? '/en' : ''}/modelos/${proto.id}`;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'JT Arquitectura', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'Prototypes' : 'Prototipos', item: `${SITE_URL}${lang === 'en' ? '/en' : ''}/#prototipos` },
+      { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'House Models' : 'Modelos de casas', item: `${SITE_URL}${lang === 'en' ? '/en' : ''}/#modelos` },
       { '@type': 'ListItem', position: 3, name: `${typeLabel} ${proto.name}`, item: pageUrl },
     ],
   };

@@ -13,12 +13,14 @@ export function ProtoCard({
   wide,
   external = true,
   compact = false,
+  mobileCompact = false,
 }: {
   proto: Prototipo;
   index: number;
   wide?: boolean;
   external?: boolean;
   compact?: boolean;
+  mobileCompact?: boolean;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
@@ -28,9 +30,12 @@ export function ProtoCard({
   const typeLabel   = proto.type === 'casa' ? tp('type_casa') : tp('type_cabana');
   const displayName = `${typeLabel} ${proto.name}`;
 
+  // isSmall: applies compact visual styles on mobile (and desktop when compact=true)
+  const isSmall = compact || mobileCompact;
+
   const innerContent = (
     <div
-      className={`relative overflow-hidden ${compact ? 'min-h-[180px] md:min-h-[400px]' : 'min-h-[400px]'}`}
+      className={`relative overflow-hidden ${isSmall ? 'min-h-[180px] md:min-h-[400px]' : 'min-h-[400px]'}`}
       style={{ height: '100%' }}
     >
       <Image
@@ -44,12 +49,24 @@ export function ProtoCard({
 
       <div className="absolute inset-0 bg-charcoal/35" />
 
-      <div className={`absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-charcoal/95 via-charcoal/70 to-transparent ${compact ? 'pt-8 md:pt-16 px-3 md:px-5 pb-3 md:pb-5' : 'pt-16 px-5 pb-5'}`}>
+      <div className={`absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-charcoal/95 via-charcoal/70 to-transparent ${isSmall ? 'pt-8 md:pt-16 px-3 md:px-5 pb-3 md:pb-5' : 'pt-16 px-5 pb-5'}`}>
 
         {/* Specs */}
-        <p className={`text-cream/55 uppercase font-bold mb-1 ${compact ? 'text-[9px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em]' : 'text-[10px] tracking-[0.2em]'}`}>
+        <p className={`text-cream/55 uppercase font-bold mb-1 ${isSmall ? 'text-[9px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em]' : 'text-[10px] tracking-[0.2em]'}`}>
           {compact ? (
+            // full compact: minimal specs always
             <>{proto.specs.coveredArea} m²</>
+          ) : isSmall ? (
+            // mobileCompact: minimal on mobile, full on desktop
+            <>
+              <span className="md:hidden">{proto.specs.coveredArea} m²</span>
+              <span className="hidden md:inline">
+                {proto.specs.coveredArea} m²
+                {proto.specs.semiCoveredArea ? ` + ${proto.specs.semiCoveredArea} m² semi` : ''}
+                {' · '}
+                {proto.specs.bedrooms} dorm.
+              </span>
+            </>
           ) : (
             <>
               {proto.specs.coveredArea} m²
@@ -63,17 +80,15 @@ export function ProtoCard({
         <div className="flex items-end justify-between gap-2 md:gap-4">
           {/* Nombre */}
           <h3
-            className={`text-cream font-bold leading-tight min-w-0 ${compact ? 'text-sm md:text-xl lg:text-2xl' : 'text-xl md:text-2xl'}`}
+            className={`text-cream font-bold leading-tight min-w-0 ${isSmall ? 'text-sm md:text-xl lg:text-2xl' : 'text-xl md:text-2xl'}`}
             style={{ fontFamily: "'Century Gothic', Futura, sans-serif" }}
           >
-            {compact ? (
+            {isSmall ? (
               <>
-                {/* Mobile: siempre 2 líneas */}
                 <span className="md:hidden">
                   <span className="block">{typeLabel}</span>
                   <span className="block">{proto.name}</span>
                 </span>
-                {/* Desktop: fluye naturalmente */}
                 <span className="hidden md:inline">{displayName}</span>
               </>
             ) : displayName}
@@ -81,7 +96,7 @@ export function ProtoCard({
 
           {/* Botón */}
           <div className="shrink-0">
-            {compact ? (
+            {isSmall ? (
               <>
                 {/* Mobile: círculo olive con flecha cream */}
                 <span className="md:hidden inline-flex items-center justify-center w-7 h-7 rounded-full bg-olive">
@@ -90,14 +105,32 @@ export function ProtoCard({
                     <polyline points="7,2.5 11,6.5 7,10.5" />
                   </svg>
                 </span>
-                {/* Desktop: botón igual que home */}
-                <span className="hidden md:inline-flex items-center gap-1.5 px-4 py-2.5 bg-olive text-cream text-[10px] font-bold tracking-widest whitespace-nowrap">
-                  {t('explorar')}
-                </span>
+                {/* Desktop: compact usa span, mobileCompact mantiene el link original */}
+                {compact ? (
+                  <span className="hidden md:inline-flex items-center gap-1.5 px-4 py-2.5 bg-olive text-cream text-[10px] font-bold tracking-widest whitespace-nowrap">
+                    {t('explorar')}
+                  </span>
+                ) : external ? (
+                  <a
+                    href={`/modelos/${proto.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden md:inline-flex items-center gap-1.5 px-4 py-2.5 bg-olive text-cream text-[10px] font-bold tracking-widest hover:bg-olive-deep transition-colors whitespace-nowrap"
+                  >
+                    {t('explorar')}
+                  </a>
+                ) : (
+                  <Link
+                    href={`/modelos/${proto.id}` as never}
+                    className="hidden md:inline-flex items-center gap-1.5 px-4 py-2.5 bg-olive text-cream text-[10px] font-bold tracking-widest hover:bg-olive-deep transition-colors whitespace-nowrap"
+                  >
+                    {t('explorar')}
+                  </Link>
+                )}
               </>
             ) : external ? (
               <a
-                href={`/prototipos/${proto.id}`}
+                href={`/modelos/${proto.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-olive text-cream text-[10px] font-bold tracking-widest hover:bg-olive-deep transition-colors whitespace-nowrap"
@@ -106,7 +139,7 @@ export function ProtoCard({
               </a>
             ) : (
               <Link
-                href={`/prototipos/${proto.id}` as never}
+                href={`/modelos/${proto.id}` as never}
                 className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-olive text-cream text-[10px] font-bold tracking-widest hover:bg-olive-deep transition-colors whitespace-nowrap"
               >
                 {t('explorar')}
@@ -128,11 +161,27 @@ export function ProtoCard({
       style={{ borderRadius: '2px' }}
     >
       {compact ? (
-        <Link href={`/prototipos/${proto.id}` as never} className="block">
+        <a
+          href={`/modelos/${proto.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
           {innerContent}
-        </Link>
+        </a>
       ) : (
-        innerContent
+        <>
+          {mobileCompact && (
+            <a
+              href={`/modelos/${proto.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 md:hidden z-20"
+              aria-label={displayName}
+            />
+          )}
+          {innerContent}
+        </>
       )}
     </motion.article>
   );

@@ -71,7 +71,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4"
             >
               <Link
-                href="#prototipos"
+                href="#modelos"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-olive-deep text-cream font-semibold text-sm md:text-base hover:bg-olive transition-colors shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
               >
                 {t('ctas.prototipos')}
@@ -84,13 +84,15 @@ export default function Hero() {
                 {t('ctas.aMedida')}
                 <span aria-hidden="true">→</span>
               </Link>
-              <Link
+              <a
                 href="/obras"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-charcoal text-cream font-semibold text-sm md:text-base hover:bg-charcoal-soft transition-colors shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
               >
                 {t('ctas.obras')}
                 <span aria-hidden="true">→</span>
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         </div>

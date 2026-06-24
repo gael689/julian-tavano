@@ -96,7 +96,7 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Link
-              href="/#prototipos"
+              href="/#modelos"
               className="inline-flex items-center gap-2 text-cream text-xs font-bold tracking-widest uppercase transition-all bg-black/35 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-black/50"
             >
               {t('back')}
@@ -195,7 +195,7 @@ export default function ProtoHeroSection({ label, name, tagline, heroImage, spec
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <Link
-            href="/#prototipos"
+            href="/#modelos"
             className="inline-flex items-center gap-2 text-cream/40 hover:text-cream text-xs font-bold tracking-widest uppercase transition-colors"
           >
             {t('back')}

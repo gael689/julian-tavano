@@ -19,8 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const protoRoutes: RouteConfig[] = PROTOTIPOS_DATA.map((p) => ({
-    es: `/prototipos/${p.id}`,
-    en: `/en/prototipos/${p.id}`,
+    es: `/modelos/${p.id}`,
+    en: `/en/modelos/${p.id}`,
     priority: 0.9,
     changeFrequency: 'monthly',
   }));

@@ -111,13 +111,15 @@ export default function ObrasTeaser() {
             transition={{ duration: 0.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
             className="shrink-0"
           >
-            <Link
+            <a
               href="/obras"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-cream text-charcoal text-sm font-bold tracking-widest hover:bg-cream-light transition-colors whitespace-nowrap shadow-[0_4px_16px_rgba(0,0,0,0.25)]"
             >
               {t('map_cta')}
               <span aria-hidden="true">→</span>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </div>

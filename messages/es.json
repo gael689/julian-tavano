@@ -1,25 +1,27 @@
 {
   "nav": {
-    "prototipos": "Prototipos",
+    "prototipos": "Modelos de casas",
+    "personalizados": "Personalizados",
     "obras": "Obras",
+    "inversion": "Inversión",
     "sobre": "Sobre",
     "contacto": "Contacto"
   },
   "hero": {
     "title": "Arquitectura que se adapta a vos.",
-    "subtitle": "Proyectos a medida, también prototipos que se adaptan a tu terreno, más de 50 obras construidas.",
+    "subtitle": "Proyectos a medida, también modelos de casas que se adaptan a tu terreno, más de 50 obras construidas.",
     "ctas": {
-      "prototipos": "Ver prototipos",
+      "prototipos": "Ver modelos de casas",
       "aMedida": "Proyectos a medida",
       "obras": "Ver mapa de obras construidas"
     }
   },
   "prototipos": {
-    "eyebrow": "PROTOTIPOS",
+    "eyebrow": "MODELOS DE CASAS",
     "title": "Viviendas listas para tu terreno.",
     "cta": "VER PROYECTO →",
     "explorar": "EXPLORAR →",
-    "consultar": "CONSULTAR POR ESTE PROTOTIPO",
+    "consultar": "CONSULTAR POR ESTE MODELO",
     "diferenciales": {
       "galpon": "Construcción en galpón con materiales de primera calidad.",
       "entrega": "Entrega en 3 meses, lista para habitar.",
@@ -67,7 +69,7 @@
       "email": "Email",
       "phone": "Teléfono / WhatsApp",
       "interest": "¿Qué te interesa?",
-      "interest_proto": "Un prototipo en particular",
+      "interest_proto": "Un modelo de casa en particular",
       "interest_custom": "Proyecto a medida",
       "interest_general": "Consulta general",
       "land": "¿Tenés terreno?",
@@ -83,7 +85,7 @@
   "protoPage": {
     "type_cabana": "Cabaña",
     "type_casa": "Casa",
-    "back": "← Prototipos",
+    "back": "← Modelos de casas",
     "scroll_hint": "Scroll para explorar",
     "conoce_mas": "CONOCÉ MÁS",
     "descripcion": "DESCRIPCIÓN",
@@ -95,8 +97,8 @@
     "cta_wa": "CONSULTAR POR WHATSAPP →",
     "galeria": "GALERÍA",
     "galeria_hint": "Tocá una imagen para verla en grande",
-    "otros_eyebrow": "PROTOTIPOS",
-    "otros_titulo": "Otros prototipos",
+    "otros_eyebrow": "MODELOS DE CASAS",
+    "otros_titulo": "Otros modelos",
     "lightbox_close": "Cerrar",
     "lightbox_prev": "Anterior",
     "lightbox_next": "Siguiente",
@@ -136,6 +138,11 @@
       "cta_plans": "CONSULTAR POR LOS PLANOS",
       "cta_email": "ENVIAR CONSULTA POR EMAIL"
     }
+  },
+  "inversion": {
+    "title": "Proyectos de inversión.",
+    "desc": "Desarrollamos proyectos inmobiliarios propios y abrimos la posibilidad de participar como inversor. Estructuras claras, plazos definidos y diseño de calidad en cada obra.",
+    "descargar": "DESCARGAR VISTA PREVIA"
   },
   "footer": {
     "tagline": "Viviendas que crecen entre los árboles.",

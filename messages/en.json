@@ -1,25 +1,27 @@
 {
   "nav": {
-    "prototipos": "Prototypes",
+    "prototipos": "House Models",
+    "personalizados": "Custom",
     "obras": "Completed Works",
+    "inversion": "Investment",
     "sobre": "About",
     "contacto": "Contact"
   },
   "hero": {
     "title": "Architecture that adapts to you.",
-    "subtitle": "Custom projects, plus prototypes that adapt to your land, and 50+ completed works.",
+    "subtitle": "Custom projects, plus house models that adapt to your land, and 50+ completed works.",
     "ctas": {
-      "prototipos": "View prototypes",
+      "prototipos": "View house models",
       "aMedida": "Custom projects",
       "obras": "View works"
     }
   },
   "prototipos": {
-    "eyebrow": "PROTOTYPES",
+    "eyebrow": "HOUSE MODELS",
     "title": "Homes ready for your land.",
     "cta": "VIEW PROJECT →",
     "explorar": "EXPLORE →",
-    "consultar": "INQUIRE ABOUT THIS PROTOTYPE",
+    "consultar": "INQUIRE ABOUT THIS MODEL",
     "diferenciales": {
       "galpon": "Built off-site with premium materials.",
       "entrega": "Delivered in 3 months, move-in ready.",
@@ -67,7 +69,7 @@
       "email": "Email",
       "phone": "Phone / WhatsApp",
       "interest": "What are you interested in?",
-      "interest_proto": "A specific prototype",
+      "interest_proto": "A specific house model",
       "interest_custom": "Custom project",
       "interest_general": "General inquiry",
       "land": "Do you own land?",
@@ -83,7 +85,7 @@
   "protoPage": {
     "type_cabana": "Cabin",
     "type_casa": "House",
-    "back": "← Prototypes",
+    "back": "← House Models",
     "scroll_hint": "Scroll to explore",
     "conoce_mas": "LEARN MORE",
     "descripcion": "DESCRIPTION",
@@ -95,8 +97,8 @@
     "cta_wa": "INQUIRE ON WHATSAPP →",
     "galeria": "GALLERY",
     "galeria_hint": "Tap an image to view it larger",
-    "otros_eyebrow": "PROTOTYPES",
-    "otros_titulo": "More prototypes",
+    "otros_eyebrow": "HOUSE MODELS",
+    "otros_titulo": "More models",
     "lightbox_close": "Close",
     "lightbox_prev": "Previous",
     "lightbox_next": "Next",
@@ -136,6 +138,11 @@
       "cta_plans": "INQUIRE ABOUT PLANS",
       "cta_email": "SEND EMAIL INQUIRY"
     }
+  },
+  "inversion": {
+    "title": "Investment projects.",
+    "desc": "We develop our own real estate projects and open the possibility of participating as an investor. Clear structures, defined timelines and quality design in every work.",
+    "descargar": "DOWNLOAD PREVIEW"
   },
   "footer": {
     "tagline": "Homes that grow among the trees.",

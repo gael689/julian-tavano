@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'JT Arquitectura',
-    short_name: 'JT Arq.',
-    description: 'Estudio de arquitectura en Monte Hermoso. Viviendas modulares y proyectos a medida.',
+    name: 'Julián Tavano Arquitecto',
+    short_name: 'Julián Tavano',
+    description: 'Arquitecto con base en Monte Hermoso. Diseño residencial, inversiones inmobiliarias y desarrollos a gran escala en Argentina.',
     start_url: '/',
     display: 'standalone',
     background_color: '#F5F0E8',

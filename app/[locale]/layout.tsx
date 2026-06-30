@@ -16,22 +16,22 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jtarquitectura.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://juliantavano.com.ar';
 
 const COPY = {
   es: {
-    title: 'JT Arquitectura | Julián Tavano — Monte Hermoso',
+    title: 'Julián Tavano | Arquitecto · Argentina',
     description:
-      'Estudio de arquitectura en Monte Hermoso, Argentina. Viviendas modulares prefabricadas y proyectos a medida. Más de 50 obras construidas en la costa atlántica.',
+      'Arquitecto con base en Monte Hermoso. Proyectos residenciales a medida, viviendas modulares, inversiones en fideicomiso y desarrollos inmobiliarios en toda Argentina.',
     ogLocale: 'es_AR',
-    ogAlt: 'JT Arquitectura — Viviendas en armonía con la naturaleza',
+    ogAlt: 'Julián Tavano Arquitecto — Proyectos en toda Argentina',
   },
   en: {
-    title: 'JT Architecture | Julián Tavano — Monte Hermoso',
+    title: 'Julián Tavano | Architect · Argentina',
     description:
-      'Architecture studio in Monte Hermoso, Argentina. Prefabricated modular homes and custom architectural design. Over 50 completed works on the Atlantic coast.',
+      'Architect based in Monte Hermoso, Argentina. Custom residential design, modular homes, trust fund investments and large-scale real estate developments across the country.',
     ogLocale: 'en_US',
-    ogAlt: 'JT Architecture — Homes in harmony with nature',
+    ogAlt: 'Julián Tavano Architect — Projects across Argentina',
   },
 } as const;
 
@@ -53,14 +53,14 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     title: {
       default: c.title,
-      template: `%s | JT Arquitectura`,
+      template: `%s | Julián Tavano`,
     },
     description: c.description,
     openGraph: {
       type: 'website',
       locale: c.ogLocale,
       alternateLocale: lang === 'es' ? ['en_US'] : ['es_AR'],
-      siteName: 'JT Arquitectura',
+      siteName: 'Julián Tavano Arquitecto',
       title: c.title,
       description: c.description,
       url: canonical,
@@ -98,6 +98,17 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
+    icons: {
+      icon: [{ url: '/logo.png', type: 'image/png' }],
+      apple: '/logo.png',
+      shortcut: '/logo.png',
+    },
+    other: {
+      'geo.region': 'AR-B',
+      'geo.placename': 'Monte Hermoso, Buenos Aires, Argentina',
+      'geo.position': '-38.9833;-61.3000',
+      'ICBM': '-38.9833, -61.3000',
+    },
   };
 }
 
@@ -112,13 +123,13 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
   '@id': `${SITE_URL}/#organization`,
-  name: 'JT Arquitectura',
-  alternateName: 'Julián Tavano Arquitectura',
+  name: 'Julián Tavano Arquitecto',
+  alternateName: ['Julián Tavano', 'JT Arquitectura'],
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   image: `${SITE_URL}/about-image.png`,
   description:
-    'Estudio de arquitectura especializado en viviendas modulares prefabricadas y proyectos a medida. Más de 50 obras construidas en Monte Hermoso y la costa atlántica argentina.',
+    'Arquitecto con base en Monte Hermoso. Proyectos residenciales a medida, viviendas modulares prefabricadas, inversiones en fideicomiso y desarrollos inmobiliarios de gran escala en toda Argentina.',
   founder: {
     '@type': 'Person',
     name: 'Julián Tavano',
@@ -139,6 +150,7 @@ const organizationSchema = {
   areaServed: [
     { '@type': 'Country', name: 'Argentina' },
     { '@type': 'City', name: 'Monte Hermoso' },
+    { '@type': 'City', name: 'Buenos Aires' },
     { '@type': 'Place', name: 'Costa Atlántica Argentina' },
   ],
   contactPoint: {
@@ -150,11 +162,13 @@ const organizationSchema = {
   sameAs: [],
   serviceType: [
     'Arquitectura residencial',
-    'Viviendas modulares prefabricadas',
     'Diseño arquitectónico a medida',
-    'Construcción en galpón',
+    'Viviendas modulares prefabricadas',
+    'Inversión inmobiliaria en fideicomiso',
+    'Desarrollo inmobiliario',
+    'Proyectos de gran escala',
   ],
-  priceRange: '$$',
+  priceRange: '$$$',
 };
 
 export default async function LocaleLayout({

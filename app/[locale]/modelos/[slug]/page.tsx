@@ -12,7 +12,7 @@ import ScrollReset from '@/components/proto/ScrollReset';
 import LightboxProvider from '@/components/proto/LightboxProvider';
 import JsonLd from '@/components/seo/JsonLd';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jtarquitectura.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://juliantavano.com.ar';
 
 export function generateStaticParams() {
   return PROTOTIPOS_DATA.map((p) => ({ slug: p.id }));
@@ -98,7 +98,7 @@ export default async function PrototipoPage({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'JT Arquitectura', item: SITE_URL },
+      { '@type': 'ListItem', position: 1, name: 'Julián Tavano', item: SITE_URL },
       { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'House Models' : 'Modelos de casas', item: `${SITE_URL}${lang === 'en' ? '/en' : ''}/#modelos` },
       { '@type': 'ListItem', position: 3, name: `${typeLabel} ${proto.name}`, item: pageUrl },
     ],
@@ -107,16 +107,16 @@ export default async function PrototipoPage({
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `${typeLabel} ${proto.name} — JT Arquitectura`,
+    name: `${typeLabel} ${proto.name} — Julián Tavano`,
     description: desc,
     url: pageUrl,
     image: proto.images.map((img) => `${SITE_URL}${img.src}`),
-    brand: { '@type': 'Brand', name: 'JT Arquitectura' },
+    brand: { '@type': 'Brand', name: 'Julián Tavano Arquitecto' },
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       priceCurrency: 'ARS',
-      seller: { '@type': 'Organization', name: 'JT Arquitectura', url: SITE_URL },
+      seller: { '@type': 'Organization', name: 'Julián Tavano Arquitecto', url: SITE_URL },
     },
     additionalProperty: [
       { '@type': 'PropertyValue', name: lang === 'en' ? 'Covered area' : 'Superficie cubierta', value: `${proto.specs.coveredArea} m²` },

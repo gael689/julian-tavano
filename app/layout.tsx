@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'JT Arquitectura',
-  description: 'Viviendas modulares en armonía con la naturaleza',
+  title: 'Julián Tavano Arquitecto',
+  description: 'Arquitecto con base en Monte Hermoso. Diseño residencial, inversiones inmobiliarias, fideicomiso y desarrollos a gran escala en toda Argentina.',
 };
 
 // Root layout just delegates to the localized layouts

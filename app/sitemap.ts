@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { PROTOTIPOS_DATA } from '@/lib/data/prototipos';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jtarquitectura.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://juliantavano.com.ar';
 
 type ChangeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
 

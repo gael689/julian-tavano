@@ -12,7 +12,7 @@ import Contact from '@/components/sections/Contact';
 import JsonLd from '@/components/seo/JsonLd';
 import { PROTOTIPOS_DATA } from '@/lib/data/prototipos';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jtarquitectura.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://juliantavano.com.ar';
 
 export async function generateMetadata({
   params,
@@ -23,17 +23,23 @@ export async function generateMetadata({
   const isEs = locale !== 'en';
 
   const title = isEs
-    ? 'Inicio — Viviendas modulares y proyectos a medida'
-    : 'Home — Modular homes and custom architectural design';
+    ? { absolute: 'Julián Tavano | Arquitecto · Diseño, Inversión y Desarrollo en Argentina' }
+    : { absolute: 'Julián Tavano | Architect · Design, Investment & Development in Argentina' };
   const description = isEs
-    ? 'Descubrí los modelos de casas de JT Arquitectura: cabañas y casas prefabricadas listas en 3 meses. También proyectos a medida en Monte Hermoso y toda Argentina.'
-    : 'Explore JT Architecture\'s house models: prefabricated cabins and houses ready in 3 months. Custom design projects across Argentina.';
+    ? 'Arquitecto con base en Monte Hermoso. Proyectos residenciales a medida, viviendas modulares, inversiones en fideicomiso y desarrollos inmobiliarios de gran escala en toda Argentina.'
+    : 'Architect based in Monte Hermoso. Custom residential design, modular homes, trust fund investments and large-scale real estate developments across Argentina.';
+  const titleStr = isEs
+    ? 'Julián Tavano | Arquitecto · Diseño, Inversión y Desarrollo en Argentina'
+    : 'Julián Tavano | Architect · Design, Investment & Development in Argentina';
 
   return {
     title,
     description,
+    keywords: isEs
+      ? ['Julián Tavano', 'arquitecto Argentina', 'fideicomiso inmobiliario', 'desarrollo inmobiliario', 'inversión en construcción', 'arquitecto Monte Hermoso', 'diseño arquitectónico a medida', 'viviendas modulares Argentina', 'proyectos residenciales Argentina', 'casas prefabricadas']
+      : ['Julian Tavano', 'architect Argentina', 'real estate investment', 'real estate development', 'trust fund construction', 'architect Monte Hermoso', 'custom architectural design', 'modular homes Argentina'],
     openGraph: {
-      title,
+      title: titleStr,
       description,
       url: isEs ? SITE_URL : `${SITE_URL}/en`,
     },
@@ -58,7 +64,7 @@ export default async function HomePage({
             name: '¿Cuánto tiempo demora la construcción de una vivienda modular?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Las viviendas modulares de JT Arquitectura se construyen en un galpón y se entregan listas para habitar en aproximadamente 3 meses, sin conflictos de obra en el terreno.',
+              text: 'Las viviendas modulares de Julián Tavano se construyen en un galpón y se entregan listas para habitar en aproximadamente 3 meses, sin conflictos de obra en el terreno.',
             },
           },
           {
@@ -66,7 +72,7 @@ export default async function HomePage({
             name: '¿Se pueden trasladar las viviendas prefabricadas a cualquier lugar de Argentina?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Sí. JT Arquitectura realiza el traslado a todo Argentina. Las viviendas modulares están diseñadas para ser transportadas y asentadas en cualquier terreno.',
+              text: 'Sí. Julián Tavano trabaja en toda Argentina. Las viviendas modulares están diseñadas para ser transportadas y asentadas en cualquier terreno del país.',
             },
           },
           {
@@ -82,15 +88,15 @@ export default async function HomePage({
             name: '¿Es posible hacer un proyecto arquitectónico a medida?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Sí. Además de los modelos de casas, JT Arquitectura ofrece diseño arquitectónico a medida respetando las condiciones del terreno, el entorno y los requerimientos del cliente.',
+              text: 'Sí. Además de los modelos de casas, Julián Tavano desarrolla proyectos arquitectónicos a medida, inversiones en fideicomiso y desarrollos inmobiliarios de mayor escala.',
             },
           },
           {
             '@type': 'Question',
-            name: '¿Dónde está ubicado el estudio de JT Arquitectura?',
+            name: '¿Dónde trabaja Julián Tavano y qué escala de proyectos maneja?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'El estudio está basado en Monte Hermoso, provincia de Buenos Aires, Argentina, con más de 50 obras ejecutadas en la costa atlántica y otras zonas del país.',
+              text: 'Julián Tavano tiene base en Monte Hermoso, Buenos Aires, y opera en todo el país. Su trabajo abarca desde viviendas individuales hasta inversiones en fideicomiso, desarrollos inmobiliarios y proyectos de gran escala con más de 50 obras ejecutadas.',
             },
           },
         ]
@@ -100,7 +106,7 @@ export default async function HomePage({
             name: 'How long does it take to build a modular home?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'JT Architecture modular homes are built off-site in a workshop and delivered move-in ready in approximately 3 months, with zero on-site disruption.',
+              text: 'Julián Tavano\'s modular homes are built off-site in a workshop and delivered move-in ready in approximately 3 months, with zero on-site disruption.',
             },
           },
           {
@@ -108,7 +114,7 @@ export default async function HomePage({
             name: 'Can the prefabricated homes be shipped anywhere in Argentina?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Yes. JT Architecture ships to any location across Argentina. The modular homes are designed to be transported and installed on any plot of land.',
+              text: 'Yes. Julián Tavano works across Argentina. The modular homes are designed to be transported and installed on any plot of land in the country.',
             },
           },
           {
@@ -124,15 +130,15 @@ export default async function HomePage({
             name: 'Is it possible to commission a custom architectural project?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Yes. In addition to house models, JT Architecture offers custom architectural design tailored to the land, surroundings, and client requirements.',
+              text: 'Yes. Beyond house models, Julián Tavano develops fully custom architectural projects, real estate investments through trust funds, and large-scale developments.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Where is JT Architecture studio located?',
+            name: 'Where does Julián Tavano work and what scale of projects does he handle?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'The studio is based in Monte Hermoso, Buenos Aires Province, Argentina, with over 50 completed works along the Atlantic coast and other regions of the country.',
+              text: 'Julián Tavano is based in Monte Hermoso, Buenos Aires, and operates across Argentina. His work ranges from individual homes to trust fund investments, real estate developments and large-scale projects, with over 50 completed works.',
             },
           },
         ],
@@ -141,7 +147,7 @@ export default async function HomePage({
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: isEs ? 'Modelos de Casas — JT Arquitectura' : 'House Models — JT Architecture',
+    name: isEs ? 'Modelos de Casas — Julián Tavano' : 'House Models — Julián Tavano',
     itemListElement: PROTOTIPOS_DATA.map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,

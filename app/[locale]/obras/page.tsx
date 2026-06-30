@@ -22,9 +22,12 @@ export async function generateMetadata({
     title,
     description,
     openGraph: {
+      type: 'website',
+      siteName: 'Julián Tavano Arquitecto',
       title,
       description,
       url: isEs ? `${SITE_URL}/obras` : `${SITE_URL}/en/obras`,
+      images: [{ url: `${SITE_URL}/about-image.png`, width: 1200, height: 630, alt: isEs ? 'Julián Tavano — Obras construidas en Argentina' : 'Julián Tavano — Built works across Argentina' }],
     },
     alternates: {
       canonical: isEs ? `${SITE_URL}/obras` : `${SITE_URL}/en/obras`,

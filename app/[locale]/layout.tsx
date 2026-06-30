@@ -22,14 +22,14 @@ const COPY = {
   es: {
     title: 'Julián Tavano | Arquitecto · Argentina',
     description:
-      'Arquitecto con base en Monte Hermoso. Proyectos residenciales a medida, viviendas modulares, inversiones en fideicomiso y desarrollos inmobiliarios en toda Argentina.',
+      'Arquitecto en Monte Hermoso. Diseño residencial, viviendas modulares, inversiones en fideicomiso y desarrollos inmobiliarios en Argentina.',
     ogLocale: 'es_AR',
     ogAlt: 'Julián Tavano Arquitecto — Proyectos en toda Argentina',
   },
   en: {
     title: 'Julián Tavano | Architect · Argentina',
     description:
-      'Architect based in Monte Hermoso, Argentina. Custom residential design, modular homes, trust fund investments and large-scale real estate developments across the country.',
+      'Architect in Monte Hermoso. Residential design, modular homes, trust fund investments and real estate developments across Argentina.',
     ogLocale: 'en_US',
     ogAlt: 'Julián Tavano Architect — Projects across Argentina',
   },

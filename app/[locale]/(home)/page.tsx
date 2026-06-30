@@ -23,14 +23,17 @@ export async function generateMetadata({
   const isEs = locale !== 'en';
 
   const title = isEs
-    ? { absolute: 'Julián Tavano | Arquitecto · Diseño, Inversión y Desarrollo en Argentina' }
-    : { absolute: 'Julián Tavano | Architect · Design, Investment & Development in Argentina' };
+    ? { absolute: 'Julián Tavano | Arquitecto · Diseño & Inversión' }
+    : { absolute: 'Julián Tavano | Architect · Design & Investment' };
   const description = isEs
-    ? 'Arquitecto con base en Monte Hermoso. Proyectos residenciales a medida, viviendas modulares, inversiones en fideicomiso y desarrollos inmobiliarios de gran escala en toda Argentina.'
-    : 'Architect based in Monte Hermoso. Custom residential design, modular homes, trust fund investments and large-scale real estate developments across Argentina.';
+    ? 'Arquitecto en Monte Hermoso. Diseño residencial, viviendas modulares, inversiones en fideicomiso y desarrollos inmobiliarios en Argentina.'
+    : 'Architect in Monte Hermoso. Residential design, modular homes, trust fund investments and real estate developments across Argentina.';
   const titleStr = isEs
-    ? 'Julián Tavano | Arquitecto · Diseño, Inversión y Desarrollo en Argentina'
-    : 'Julián Tavano | Architect · Design, Investment & Development in Argentina';
+    ? 'Julián Tavano | Arquitecto · Diseño & Inversión'
+    : 'Julián Tavano | Architect · Design & Investment';
+  const ogAlt = isEs
+    ? 'Julián Tavano Arquitecto — Proyectos en toda Argentina'
+    : 'Julián Tavano Architect — Projects across Argentina';
 
   return {
     title,
@@ -39,9 +42,12 @@ export async function generateMetadata({
       ? ['Julián Tavano', 'arquitecto Argentina', 'fideicomiso inmobiliario', 'desarrollo inmobiliario', 'inversión en construcción', 'arquitecto Monte Hermoso', 'diseño arquitectónico a medida', 'viviendas modulares Argentina', 'proyectos residenciales Argentina', 'casas prefabricadas']
       : ['Julian Tavano', 'architect Argentina', 'real estate investment', 'real estate development', 'trust fund construction', 'architect Monte Hermoso', 'custom architectural design', 'modular homes Argentina'],
     openGraph: {
+      type: 'website',
+      siteName: 'Julián Tavano Arquitecto',
       title: titleStr,
       description,
       url: isEs ? SITE_URL : `${SITE_URL}/en`,
+      images: [{ url: `${SITE_URL}/about-image.png`, width: 1200, height: 630, alt: ogAlt }],
     },
   };
 }

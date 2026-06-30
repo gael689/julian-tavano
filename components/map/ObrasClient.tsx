@@ -271,7 +271,7 @@ function DesktopCarousel({
   onObraClick: (id: string) => void;
   onObraHover: (id: string | null) => void;
   onClose: () => void;
-  scrollerRef: React.RefObject<HTMLDivElement>;
+  scrollerRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const [canScrollLeft,  setCanScrollLeft]  = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);

@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "prototipos": "Modelos de casas",
+    "personalizados": "Personalizados",
+    "obras": "Obras",
+    "inversion": "Inversión",
+    "sobre": "Sobre",
+    "contacto": "Contacto"
+  },
+  "hero": {
+    "title": "Arquitectura que se adapta a vos.",
+    "subtitle": "Proyectos a medida, también modelos de casas que se adaptan a tu terreno, más de 50 obras construidas.",
+    "ctas": {
+      "prototipos": "Ver modelos de casas",
+      "aMedida": "Proyectos a medida",
+      "obras": "Ver mapa de obras construidas",
+      "inversiones": "Inversiones"
+    }
+  },
+  "prototipos": {
+    "eyebrow": "MODELOS DE CASAS",
+    "title": "Viviendas listas para tu terreno.",
+    "cta": "VER PROYECTO →",
+    "explorar": "EXPLORAR →",
+    "consultar": "CONSULTAR POR ESTE MODELO",
+    "diferenciales": {
+      "galpon": "Construcción en galpón con materiales de primera calidad.",
+      "entrega": "Entrega en 3 meses, lista para habitar.",
+      "traslado": "Traslado a todo Argentina.",
+      "cero_conflicto": "Cero conflicto de obra. Incluye instalaciones completas y artefactos."
+    }
+  },
+  "customProjects": {
+    "title": "PROYECTOS PERSONALIZADOS",
+    "text": "Cada terreno cuenta una historia. La diseñamos juntos.",
+    "desc": "Ofrecemos diseño arquitectónico a medida, manteniendo nuestra filosofía de respeto por el entorno, calidez espacial y eficiencia constructiva.",
+    "cta": "EMPEZAR UN PROYECTO"
+  },
+  "obras": {
+    "eyebrow": "MONTE HERMOSO · BALNEARIO SAUCE GRANDE · ZONA",
+    "title": "+50 OBRAS",
+    "title_home": "+50 OBRAS CONSTRUIDAS",
+    "subtitle_home": "Monte Hermoso y zona.",
+    "subtitle": "Cada pin es una casa construida.",
+    "cta": "VER TODAS LAS OBRAS →",
+    "home_desc": "Explorá el mapa interactivo con más de 50 proyectos construidos en Monte Hermoso y la costa atlántica argentina.",
+    "map_cta": "VER MAPA INTERACTIVO",
+    "search": "Buscar por nombre o zona...",
+    "ver_mas": "Ver más",
+    "proximamente": "Próximamente."
+  },
+  "about": {
+    "title": "JULIÁN TAVANO",
+    "bio1": "Arquitecto enfocado en la conexión entre hábitat y naturaleza.",
+    "bio2": "Especialista en construcción modular eficiente, con base en Monte Hermoso.",
+    "bio3": "Diseñamos espacios que respetan el entorno y elevan la calidad de vida.",
+    "stats": {
+      "obras": "+50",
+      "obras_label": "obras construidas",
+      "trayectoria": "+10",
+      "trayectoria_label": "años de trayectoria",
+      "entregas": "100%",
+      "entregas_label": "proyectos entregados"
+    }
+  },
+  "location": {
+    "eyebrow": "DÓNDE ESTAMOS",
+    "title": "Encontranos en Google Maps",
+    "desc": "Con base en Monte Hermoso y obras en toda la Argentina. Mirá la ubicación o abrila directo en Google Maps.",
+    "cta": "VER EN GOOGLE MAPS"
+  },
+  "contact": {
+    "title": "EMPECEMOS",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono / WhatsApp",
+      "interest": "¿Qué te interesa?",
+      "interest_proto": "Un modelo de casa en particular",
+      "interest_custom": "Proyecto a medida",
+      "interest_general": "Consulta general",
+      "land": "¿Tenés terreno?",
+      "land_yes": "Sí",
+      "land_no": "No",
+      "land_process": "En proceso de compra",
+      "zone": "Zona donde construirías",
+      "message": "Mensaje",
+      "submit": "ENVIAR CONSULTA",
+      "success": "Consulta enviada con éxito. Nos pondremos en contacto pronto."
+    }
+  },
+  "protoPage": {
+    "type_cabana": "Cabaña",
+    "type_casa": "Casa",
+    "back": "← Modelos de casas",
+    "scroll_hint": "Scroll para explorar",
+    "conoce_mas": "CONOCÉ MÁS",
+    "descripcion": "DESCRIPCIÓN",
+    "caracteristicas": "CARACTERÍSTICAS",
+    "distribucion": "Distribución",
+    "servicio": "SERVICIO",
+    "siguiente_paso": "SIGUIENTE PASO",
+    "cta_title": "Empezá tu proyecto hoy.",
+    "cta_wa": "CONSULTAR POR WHATSAPP →",
+    "galeria": "GALERÍA",
+    "galeria_hint": "Tocá una imagen para verla en grande",
+    "otros_eyebrow": "MODELOS DE CASAS",
+    "otros_titulo": "Otros modelos",
+    "lightbox_close": "Cerrar",
+    "lightbox_prev": "Anterior",
+    "lightbox_next": "Siguiente",
+    "highlights": [
+      "Diseño en armonía con la naturaleza",
+      "Ideal para descanso, alquiler turístico o vivienda permanente",
+      "Espacios luminosos, funcionales y cómodos"
+    ],
+    "uso": {
+      "descanso": "Descanso y naturaleza",
+      "vivienda": "Vivienda permanente",
+      "alquiler": "Alquiler turístico"
+    },
+    "specs": {
+      "cubiertos": "Cubiertos",
+      "semicubiertos": "Semicubiertos",
+      "habitacion": "Habitación",
+      "bano": "Baño"
+    },
+    "tabs": {
+      "full_label": "Construcción completa",
+      "full_subtitle": "Fabricamos y entregamos lista para habitar",
+      "full_item_1": "Construcción en galpón con materiales de primera calidad",
+      "full_item_2": "Entrega en 3 meses, lista para habitar",
+      "full_item_3": "Traslado a todo Argentina",
+      "full_item_4": "Cero conflicto de obra en tu terreno",
+      "full_item_5": "Instalaciones completas: agua, cloaca, luz y artefactos",
+      "plans_label": "Solo planos",
+      "plans_subtitle": "Documentación completa para que vos construyas",
+      "plans_item_1": "Planos de arquitectura (plantas, cortes y fachadas)",
+      "plans_item_2": "Memoria descriptiva completa",
+      "plans_item_3": "Especificaciones técnicas y listado de materiales",
+      "plans_item_4": "Documentación para gestión de permiso municipal",
+      "plans_item_5": "Asesoría técnica inicial por videollamada (60 min)",
+      "plans_item_6": "Soporte para consultas durante la construcción",
+      "cta_full": "CONSULTAR CONSTRUCCIÓN COMPLETA",
+      "cta_plans": "CONSULTAR POR LOS PLANOS",
+      "cta_email": "ENVIAR CONSULTA POR EMAIL"
+    }
+  },
+  "inversion": {
+    "title": "Proyectos de inversión.",
+    "desc": "Desarrollamos proyectos inmobiliarios propios y abrimos la posibilidad de participar como inversor. Estructuras claras, plazos definidos y diseño de calidad en cada obra.",
+    "descargar": "DESCARGAR VISTA PREVIA"
+  },
+  "footer": {
+    "tagline": "Viviendas que crecen entre los árboles.",
+    "rights": "© 2026 Julián Tavano Arquitectura. Todos los derechos reservados.",
+    "developed_by": "Desarrollado por"
+  }
+}

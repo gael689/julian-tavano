@@ -49,18 +49,15 @@ export default function Footer() {
       <div className="container-layout">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
 
-          {/* Logo & Tagline */}
+          {/* Logo */}
           <div className="flex flex-col gap-4">
             <Image
               src="/logo.png"
               alt="Julián Tavano Arquitecto"
-              width={60}
-              height={60}
+              width={110}
+              height={110}
               className="brightness-0 opacity-90"
             />
-            <p className="text-body font-normal text-charcoal/80 max-w-sm mt-2">
-              {t('tagline')}
-            </p>
           </div>
 
           {/* Navigation */}

@@ -39,8 +39,8 @@ export default function Navigation() {
       <header
         className={clsx(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          isObrasPage 
-            ? 'bg-[#6B7A5A] py-1.5 shadow-md' // Lighter olive, tighter padding
+          isObrasPage
+            ? 'bg-olive-soft py-1.5 shadow-md' // Lighter olive, tighter padding
             : scrolled 
               ? 'bg-cream/90 backdrop-blur-md py-2 shadow-sm' 
               : 'bg-gradient-to-b from-black/80 via-black/25 to-transparent py-3'
@@ -80,7 +80,7 @@ export default function Navigation() {
                 "text-eyebrow text-[9px] tracking-[0.25em] font-medium transition-colors duration-300",
                 scrolled ? "text-olive-soft" : "text-cream/70"
               )}>
-                Arquitecto
+                {t('role')}
               </span>
             </div>
           </Link>
@@ -115,7 +115,7 @@ export default function Navigation() {
               scrolled || menuOpen ? "text-olive" : "text-cream drop-shadow-md"
             )}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle Menu"
+            aria-label={t('toggle_menu')}
           >
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

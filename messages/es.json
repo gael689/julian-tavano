@@ -1,18 +1,20 @@
 {
   "nav": {
     "prototipos": "Modelos de casas",
-    "personalizados": "Personalizados",
+    "personalizados": "Proyecto nuevo",
     "obras": "Obras",
     "inversion": "Inversión",
     "sobre": "Sobre",
-    "contacto": "Contacto"
+    "contacto": "Contacto",
+    "role": "Arquitecto",
+    "toggle_menu": "Abrir o cerrar el menú"
   },
   "hero": {
     "title": "Arquitectura que se adapta a vos.",
-    "subtitle": "Proyectos a medida, también modelos de casas que se adaptan a tu terreno, más de 50 obras construidas.",
+    "subtitle": "Proyectos a medida, también modelos de casas que se adaptan a tu terreno, {count} obras construidas.",
     "ctas": {
       "prototipos": "Ver modelos de casas",
-      "aMedida": "Proyectos a medida",
+      "aMedida": "Proyecto nuevo",
       "obras": "Ver mapa de obras construidas",
       "inversiones": "Inversiones"
     }
@@ -31,36 +33,33 @@
     }
   },
   "customProjects": {
-    "title": "PROYECTOS PERSONALIZADOS",
+    "title": "PROYECTO NUEVO",
     "text": "Cada terreno cuenta una historia. La diseñamos juntos.",
-    "desc": "Ofrecemos diseño arquitectónico a medida, manteniendo nuestra filosofía de respeto por el entorno, calidez espacial y eficiencia constructiva.",
+    "desc": "Diseñamos tu proyecto desde cero, manteniendo nuestra filosofía de respeto por el entorno, calidez espacial y eficiencia constructiva.",
     "cta": "EMPEZAR UN PROYECTO"
   },
   "obras": {
     "eyebrow": "MONTE HERMOSO · BALNEARIO SAUCE GRANDE · ZONA",
-    "title": "+50 OBRAS",
-    "title_home": "+50 OBRAS CONSTRUIDAS",
+    "title": "{count} OBRAS",
+    "title_home": "{count} OBRAS CONSTRUIDAS",
     "subtitle_home": "Monte Hermoso y zona.",
     "subtitle": "Cada pin es una casa construida.",
     "cta": "VER TODAS LAS OBRAS →",
-    "home_desc": "Explorá el mapa interactivo con más de 50 proyectos construidos en Monte Hermoso y la costa atlántica argentina.",
+    "home_desc": "Explorá el mapa interactivo con {count} proyectos construidos en Monte Hermoso y la costa atlántica argentina.",
     "map_cta": "VER MAPA INTERACTIVO",
     "search": "Buscar por nombre o zona...",
     "ver_mas": "Ver más",
     "proximamente": "Próximamente."
   },
   "about": {
+    "eyebrow": "SOBRE EL ESTUDIO",
     "title": "JULIÁN TAVANO",
     "bio1": "Arquitecto enfocado en la conexión entre hábitat y naturaleza.",
     "bio2": "Especialista en construcción modular eficiente, con base en Monte Hermoso.",
     "bio3": "Diseñamos espacios que respetan el entorno y elevan la calidad de vida.",
     "stats": {
-      "obras": "+50",
       "obras_label": "obras construidas",
-      "trayectoria": "+10",
-      "trayectoria_label": "años de trayectoria",
-      "entregas": "100%",
-      "entregas_label": "proyectos entregados"
+      "trayectoria_label": "años de trayectoria"
     }
   },
   "location": {
@@ -70,6 +69,7 @@
     "cta": "VER EN GOOGLE MAPS"
   },
   "contact": {
+    "eyebrow": "CONTACTO",
     "title": "EMPECEMOS",
     "form": {
       "name": "Nombre completo",
@@ -77,15 +77,20 @@
       "phone": "Teléfono / WhatsApp",
       "interest": "¿Qué te interesa?",
       "interest_proto": "Un modelo de casa en particular",
-      "interest_custom": "Proyecto a medida",
+      "interest_custom": "Proyecto nuevo",
       "interest_general": "Consulta general",
       "land": "¿Tenés terreno?",
       "land_yes": "Sí",
       "land_no": "No",
       "land_process": "En proceso de compra",
       "zone": "Zona donde construirías",
+      "surface_placeholder": "Superficie aproximada",
+      "surfaces": ["Hasta 50 m²", "50 – 80 m²", "80 – 120 m²", "Más de 120 m²"],
+      "budget_placeholder": "Presupuesto estimado",
+      "budgets": ["Hasta USD 30.000", "USD 30.000 – 60.000", "USD 60.000 – 100.000", "Más de USD 100.000"],
       "message": "Mensaje",
       "submit": "ENVIAR CONSULTA",
+      "sending": "ENVIANDO…",
       "success": "Consulta enviada con éxito. Nos pondremos en contacto pronto."
     }
   },
@@ -152,7 +157,7 @@
     "descargar": "DESCARGAR VISTA PREVIA"
   },
   "footer": {
-    "tagline": "Viviendas que crecen entre los árboles.",
+    "tagline": "Arquitectura simple, honesta y conectada con el entorno.",
     "rights": "© 2026 Julián Tavano Arquitectura. Todos los derechos reservados.",
     "developed_by": "Desarrollado por"
   }

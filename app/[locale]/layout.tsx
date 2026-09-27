@@ -98,11 +98,10 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
-    icons: {
-      icon: [{ url: '/logo.png', type: 'image/png' }],
-      apple: '/logo.png',
-      shortcut: '/logo.png',
-    },
+    // Sin `icons` explícito: Next.js sirve solo app/favicon.ico, app/icon.png
+    // y app/apple-icon.png por convención de archivo (el isotipo sobre
+    // petróleo). Antes esto apuntaba a /logo.png — blanco sobre transparente,
+    // invisible en una pestaña clara — y app/favicon.ico ni existía (404).
     other: {
       'geo.region': 'AR-B',
       'geo.placename': 'Monte Hermoso, Buenos Aires, Argentina',
@@ -113,7 +112,7 @@ export async function generateMetadata({
 }
 
 export const viewport: Viewport = {
-  themeColor: '#3A4A2A',
+  themeColor: '#315C57',
   colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,

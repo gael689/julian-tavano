@@ -31,12 +31,12 @@ function useTypewriter(text: string, isActive: boolean, speed = 70) {
   return { displayed, done };
 }
 
-export default function ObrasTeaser() {
+export default function ObrasTeaser({ obrasCount }: { obrasCount: number }) {
   const t = useTranslations('obras');
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
-  const titleText = t('title_home');
+  const titleText = t('title_home', { count: obrasCount });
   const { displayed: typedTitle, done: typingDone } = useTypewriter(titleText, inView, 70);
 
   return (
@@ -99,7 +99,7 @@ export default function ObrasTeaser() {
               transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="text-body text-cream/85 max-w-lg"
             >
-              {t('home_desc')}
+              {t('home_desc', { count: obrasCount })}
             </motion.p>
           </div>
 

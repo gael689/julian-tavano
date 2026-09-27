@@ -141,7 +141,7 @@ export default function ObrasClient({ obras }: { obras: Obra[] }) {
             exit={{ y: 14, opacity: 0, x: '-50%' }}
             transition={{ type: 'spring', damping: 28, stiffness: 300 }}
             onClick={() => setListOpen(true)}
-            className="hidden md:inline-flex absolute bottom-6 left-1/2 z-30 items-center gap-2.5 px-6 py-3 rounded-full bg-cream/90 backdrop-blur-xl border border-[rgba(58,74,42,0.18)] text-charcoal hover:bg-cream font-semibold text-sm shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-colors"
+            className="hidden md:inline-flex absolute bottom-6 left-1/2 z-30 items-center gap-2.5 px-6 py-3 rounded-full bg-cream/90 backdrop-blur-xl border border-[rgba(49,92,87,0.18)] text-charcoal hover:bg-cream font-semibold text-sm shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-colors"
           >
             <List size={15} className="text-olive-deep" />
             <span style={{ fontFamily: "'Century Gothic', sans-serif", fontWeight: 700 }}>
@@ -224,7 +224,7 @@ export default function ObrasClient({ obras }: { obras: Obra[] }) {
             >
               {/* Inner wrapper handles visual clipping independently */}
               <div className="rounded-2xl overflow-hidden bg-[rgba(245,240,232,0.82)] backdrop-blur-2xl border border-[rgba(245,240,232,0.55)]"
-                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -1px 0 rgba(58,74,42,0.06)' }}>
+                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -1px 0 rgba(49,92,87,0.06)' }}>
                 <DesktopCarousel
                   filteredObras={filteredObras}
                   searchQuery={searchQuery}
@@ -351,6 +351,10 @@ export default function ObrasClient({ obras }: { obras: Obra[] }) {
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 6px; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Tiles de OpenStreetMap (ver ObrasMap.tsx) desaturados para no chocar
+           con la paleta cream/petróleo del resto del sitio — el estilo crudo
+           de OSM es mucho más saturado que Voyager, el que reemplazan. */
+        .map-tiles-muted { filter: grayscale(55%) brightness(1.06) contrast(0.95); }
       `}</style>
     </div>
   );
@@ -431,7 +435,7 @@ function DesktopCarousel({
   return (
     <div>
       {/* Header */}
-      <div className="flex items-center gap-3 px-5 pt-3.5 pb-3 border-b border-[rgba(58,74,42,0.08)]">
+      <div className="flex items-center gap-3 px-5 pt-3.5 pb-3 border-b border-[rgba(49,92,87,0.08)]">
         <div className="flex items-center gap-1.5 shrink-0">
           <MapPin size={13} className="text-olive-soft" />
           <span style={{ fontFamily: "'Century Gothic', sans-serif", fontWeight: 700 }}
@@ -447,7 +451,7 @@ function DesktopCarousel({
             placeholder="Buscar..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/55 border border-[rgba(58,74,42,0.12)] rounded-full py-1.5 pl-8 pr-3 text-[12px] text-charcoal placeholder-[#6B7A5A]/50 focus:outline-none focus:bg-white/80 focus:border-olive/30 transition-all duration-200"
+            className="w-full bg-white/55 border border-[rgba(49,92,87,0.12)] rounded-full py-1.5 pl-8 pr-3 text-[12px] text-charcoal placeholder-[#7D8978]/50 focus:outline-none focus:bg-white/80 focus:border-olive/30 transition-all duration-200"
           />
           {searchQuery && (
             <button onClick={() => setSearchQuery('')}
@@ -458,7 +462,7 @@ function DesktopCarousel({
         </div>
 
         <button onClick={onClose} aria-label="Cerrar"
-          className="ml-auto w-7 h-7 flex items-center justify-center rounded-full bg-[rgba(58,74,42,0.07)] hover:bg-[rgba(58,74,42,0.14)] text-olive-soft hover:text-olive-deep transition-all shrink-0">
+          className="ml-auto w-7 h-7 flex items-center justify-center rounded-full bg-[rgba(49,92,87,0.07)] hover:bg-[rgba(49,92,87,0.14)] text-olive-soft hover:text-olive-deep transition-all shrink-0">
           <X size={13} />
         </button>
       </div>
@@ -472,7 +476,7 @@ function DesktopCarousel({
               initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.85 }}
               transition={{ duration: 0.18 }}
               onClick={() => scrollBy('left')}
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-cream/95 hover:bg-cream border border-[rgba(58,74,42,0.14)] text-olive-deep shadow-[0_4px_16px_rgba(0,0,0,0.16)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.22)] transition-all backdrop-blur-sm"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-cream/95 hover:bg-cream border border-[rgba(49,92,87,0.14)] text-olive-deep shadow-[0_4px_16px_rgba(0,0,0,0.16)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.22)] transition-all backdrop-blur-sm"
             >
               <ChevronLeft size={17} />
             </motion.button>
@@ -485,7 +489,7 @@ function DesktopCarousel({
               initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.85 }}
               transition={{ duration: 0.18 }}
               onClick={() => scrollBy('right')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-cream/95 hover:bg-cream border border-[rgba(58,74,42,0.14)] text-olive-deep shadow-[0_4px_16px_rgba(0,0,0,0.16)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.22)] transition-all backdrop-blur-sm"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-cream/95 hover:bg-cream border border-[rgba(49,92,87,0.14)] text-olive-deep shadow-[0_4px_16px_rgba(0,0,0,0.16)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.22)] transition-all backdrop-blur-sm"
             >
               <ChevronRight size={17} />
             </motion.button>
@@ -513,9 +517,9 @@ function DesktopCarousel({
                   onMouseLeave={() => onObraHover(null)}
                   className={`shrink-0 w-[196px] rounded-2xl overflow-hidden border text-left transition-all duration-300 ${
                     isActive
-                      ? 'bg-olive-deep/[0.10] border-olive-deep/35 shadow-[0_6px_24px_rgba(58,74,42,0.22)] scale-[1.05] -translate-y-0.5'
+                      ? 'bg-olive-deep/[0.10] border-olive-deep/35 shadow-[0_6px_24px_rgba(49,92,87,0.22)] scale-[1.05] -translate-y-0.5'
                       : isHovered
-                      ? `${tint} border-[rgba(58,74,42,0.18)] scale-[1.025] shadow-[0_4px_16px_rgba(0,0,0,0.10)] -translate-y-px`
+                      ? `${tint} border-[rgba(49,92,87,0.18)] scale-[1.025] shadow-[0_4px_16px_rgba(0,0,0,0.10)] -translate-y-px`
                       : `${tint} border-[rgba(245,240,232,0.8)] shadow-[0_1px_4px_rgba(0,0,0,0.05)]`
                   }`}
                 >

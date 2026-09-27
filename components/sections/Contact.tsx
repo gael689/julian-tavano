@@ -9,20 +9,6 @@ import type { ContactInput } from '@/lib/contact/schema';
 
 const INTERESTS = ['interest_proto', 'interest_custom', 'interest_general'] as const;
 
-const BUDGETS = [
-  'Hasta USD 30.000',
-  'USD 30.000 – 60.000',
-  'USD 60.000 – 100.000',
-  'Más de USD 100.000',
-] as const;
-
-const SURFACES = [
-  'Hasta 50 m²',
-  '50 – 80 m²',
-  '80 – 120 m²',
-  'Más de 120 m²',
-] as const;
-
 function CharReveal({ text, isActive }: { text: string; isActive: boolean }) {
   return (
     <span className="inline-flex flex-wrap leading-none">
@@ -52,6 +38,8 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const surfaces = t.raw('form.surfaces') as string[];
+  const budgets = t.raw('form.budgets') as string[];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -94,7 +82,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-eyebrow text-olive mb-6"
           >
-            CONTACTO
+            {t('eyebrow')}
           </motion.p>
           <h2
             className="font-bold text-cream overflow-hidden"
@@ -158,12 +146,12 @@ export default function Contact() {
               {/* Superficie + Presupuesto */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <select name="surface" defaultValue="" className={`${inputClass} appearance-none`}>
-                  <option value="">Superficie aproximada</option>
-                  {SURFACES.map((s) => <option key={s} value={s}>{s}</option>)}
+                  <option value="">{t('form.surface_placeholder')}</option>
+                  {surfaces.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
                 <select name="budget" defaultValue="" className={`${inputClass} appearance-none`}>
-                  <option value="">Presupuesto estimado</option>
-                  {BUDGETS.map((b) => <option key={b} value={b}>{b}</option>)}
+                  <option value="">{t('form.budget_placeholder')}</option>
+                  {budgets.map((b) => <option key={b} value={b}>{b}</option>)}
                 </select>
               </div>
 
@@ -197,7 +185,7 @@ export default function Contact() {
                   disabled={isPending}
                   className="flex-1 py-4 bg-olive text-cream text-sm font-bold tracking-widest hover:bg-olive-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isPending ? 'ENVIANDO…' : t('form.submit')}
+                  {isPending ? t('form.sending') : t('form.submit')}
                 </button>
                 <a
                   href="https://wa.me/5492494246878"

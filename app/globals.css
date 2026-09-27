@@ -1,15 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-olive-deep: #3A4A2A;
-  --color-olive: #4A5A3A;
-  --color-olive-soft: #6B7A5A;
-  --color-cream: #F5F0E8;
-  --color-cream-light: #FAFAF7;
-  --color-charcoal: #1F1F1F;
-  --color-charcoal-soft: #2B2B2B;
-  --color-wood: #B8864E;
-  --color-concrete: #D1CBC2;
+  /*
+   * Paleta definida en la revisión de sep/2026 (informe de ago/2026, punto
+   * #11). Los 5 colores existen acá con su hex exacto para poder usarlos
+   * directo donde haga falta (p. ej. la ola entre secciones).
+   *
+   * Las clases del sitio (`olive-*`, `wood`, `charcoal*`, `cream*`,
+   * `concrete`) NO se renombraron en esta pasada — para no tocar cientos de
+   * usos en un solo commit — pero abajo apuntan a estos mismos valores, así
+   * que el efecto visual ya es el de la paleta nueva. Renombrarlas queda
+   * pendiente como limpieza aparte.
+   */
+  --color-petroleo: #315C57;
+  --color-grafito: #252927;
+  --color-hueso: #F3F0E8;
+  --color-salvia: #7D8978;
+  --color-arena: #D5C7B3;
+
+  --color-olive-deep: #274A46;   /* petróleo oscuro — hover, títulos fuertes */
+  --color-olive: #315C57;        /* petróleo — marca, botones, enlaces */
+  /* Salvia oscurecido ~10%: el #7D8978 del informe da 3.22:1 sobre hueso y
+     no alcanza AA para el texto que lleva encima (Inversión, header de
+     /obras). Con este tono, cream/hueso encima llega a 4.89:1. */
+  --color-olive-soft: #5F6C58;
+  --color-cream: #F3F0E8;        /* hueso */
+  --color-cream-light: #F8F5EE;
+  --color-charcoal: #252927;     /* grafito */
+  --color-charcoal-soft: #2F3430;
+  /* Arena oscurecido: el #D5C7B3 del informe es un acento de fondo (1.46:1
+     sobre hueso), no sirve como texto o botón con texto claro encima. */
+  --color-wood: #8A6339;
+  --color-concrete: #DCD3C4;     /* variante clara de arena, para líneas y fondos */
 }
 
 @layer base {

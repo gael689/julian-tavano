@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ObrasClient from '@/components/map/ObrasClient';
-import { getObras } from '@/lib/repo';
+import { getObras, getObrasCount } from '@/lib/repo';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://juliantavano.com.ar';
 
@@ -13,13 +13,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const isEs = locale !== 'en';
+  const obrasCount = await getObrasCount();
 
   const title = isEs
     ? 'Obras — Mapa de proyectos construidos'
     : 'Works — Map of completed projects';
   const description = isEs
-    ? 'Explorá el mapa interactivo con más de 50 obras construidas por Julián Tavano en Monte Hermoso, Balneario Sauce Grande y la costa atlántica argentina.'
-    : 'Explore the interactive map featuring over 50 projects built by Julián Tavano in Monte Hermoso, Balneario Sauce Grande and the Argentine Atlantic coast.';
+    ? `Explorá el mapa interactivo con ${obrasCount} obras construidas por Julián Tavano en Monte Hermoso, Balneario Sauce Grande y la costa atlántica argentina.`
+    : `Explore the interactive map featuring ${obrasCount} projects built by Julián Tavano in Monte Hermoso, Balneario Sauce Grande and the Argentine Atlantic coast.`;
 
   return {
     title,

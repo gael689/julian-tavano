@@ -11,7 +11,11 @@ import About from '@/components/sections/About';
 import Contact from '@/components/sections/Contact';
 import LocationMap from '@/components/sections/LocationMap';
 import JsonLd from '@/components/seo/JsonLd';
-import { getInversiones, getPrototipos } from '@/lib/repo';
+import { getInversiones, getObrasCount, getPrototipos } from '@/lib/repo';
+
+// Año de graduación de Julián (UNLP) — única fuente de la cifra de
+// trayectoria, para que no se desincronice con la biografía.
+const ANIO_GRADUACION = 2018;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://juliantavano.com.ar';
 
@@ -64,10 +68,12 @@ export default async function HomePage({
   const { locale } = await params;
   const isEs = locale !== 'en';
 
-  const [prototipos, inversiones] = await Promise.all([
+  const [prototipos, inversiones, obrasCount] = await Promise.all([
     getPrototipos(),
     getInversiones(),
+    getObrasCount(),
   ]);
+  const aniosTrayectoria = new Date().getFullYear() - ANIO_GRADUACION;
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -111,7 +117,7 @@ export default async function HomePage({
             name: '¿Dónde trabaja Julián Tavano y qué escala de proyectos maneja?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Julián Tavano tiene base en Monte Hermoso, Buenos Aires, y opera en todo el país. Su trabajo abarca desde viviendas individuales hasta inversiones en fideicomiso, desarrollos inmobiliarios y proyectos de gran escala con más de 50 obras ejecutadas.',
+              text: `Julián Tavano tiene base en Monte Hermoso, Buenos Aires, y opera en todo el país. Su trabajo abarca desde viviendas individuales hasta inversiones en fideicomiso, desarrollos inmobiliarios y proyectos de gran escala, con ${obrasCount} obras ejecutadas.`,
             },
           },
         ]
@@ -153,7 +159,7 @@ export default async function HomePage({
             name: 'Where does Julián Tavano work and what scale of projects does he handle?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Julián Tavano is based in Monte Hermoso, Buenos Aires, and operates across Argentina. His work ranges from individual homes to trust fund investments, real estate developments and large-scale projects, with over 50 completed works.',
+              text: `Julián Tavano is based in Monte Hermoso, Buenos Aires, and operates across Argentina. His work ranges from individual homes to trust fund investments, real estate developments and large-scale projects, with ${obrasCount} completed works.`,
             },
           },
         ],
@@ -178,13 +184,13 @@ export default async function HomePage({
       <JsonLd data={itemListSchema} />
       <LetterboxIntro />
       <StickyFadeWrapper>
-        <Hero />
+        <Hero obrasCount={obrasCount} />
       </StickyFadeWrapper>
       <DarkenOnScrollOut startAt={0.68}>
         <Prototipos items={prototipos} />
       </DarkenOnScrollOut>
       <DarkenOnScrollOut>
-        <ObrasTeaser />
+        <ObrasTeaser obrasCount={obrasCount} />
       </DarkenOnScrollOut>
       <DarkenOnScrollOut variant="lighten">
         <CustomProjects />
@@ -193,7 +199,7 @@ export default async function HomePage({
         <Inversion items={inversiones} />
       </DarkenOnScrollOut>
       <DarkenOnScrollOut startAt={0.35}>
-        <About />
+        <About obrasCount={obrasCount} aniosTrayectoria={aniosTrayectoria} />
       </DarkenOnScrollOut>
       <Contact />
       <DarkenOnScrollOut>

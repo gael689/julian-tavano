@@ -19,7 +19,7 @@ const ctaBase =
   'whitespace-nowrap transition-all shadow-[0_2px_12px_rgba(0,0,0,0.35)] ' +
   'px-6 py-3 text-sm lg:px-4 lg:py-2.5 lg:text-[13px] xl:px-6 xl:py-3 xl:text-base';
 
-export default function Hero() {
+export default function Hero({ obrasCount }: { obrasCount: number }) {
   const t = useTranslations('hero');
 
   return (
@@ -72,7 +72,7 @@ export default function Hero() {
                 textShadow: '0 1px 2px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.7), 0 0 2px rgba(0,0,0,1)',
               }}
             >
-              {t('subtitle')}
+              {t('subtitle', { count: obrasCount })}
             </motion.p>
 
             {/* Los 4 CTA en una sola fila desde lg — abajo de ese ancho no

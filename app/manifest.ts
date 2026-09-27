@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Arquitecto con base en Monte Hermoso. Diseño residencial, inversiones inmobiliarias y desarrollos a gran escala en Argentina.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#F5F0E8',
-    theme_color: '#3A4A2A',
+    background_color: '#F3F0E8',
+    theme_color: '#315C57',
     icons: [
       {
         src: '/logo.png',

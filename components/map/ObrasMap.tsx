@@ -14,7 +14,7 @@ interface ObrasMapProps {
 
 function buildPinSvg(isActive: boolean) {
   const size = isActive ? 44 : 32;
-  const color = isActive ? '#2c3820' : '#3A4A2A';
+  const color = isActive ? '#274A46' : '#315C57'; // petróleo / petróleo oscuro (paleta sep/2026)
   const shadow = isActive 
     ? 'drop-shadow(0px 8px 12px rgba(0,0,0,0.4))'
     : 'drop-shadow(0px 4px 6px rgba(0,0,0,0.3))';
@@ -67,11 +67,32 @@ export default function ObrasMap({
         zoomControl: false,
       });
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://carto.com/">CARTO</a>, &copy; <a href="https://openstreetmap.org">OSM</a>',
-        subdomains: 'abcd',
-        maxZoom: 19,
-      }).addTo(map);
+      // CARTO cerró el acceso sin clave el 28/ago/2026 (devuelve 200 con un
+      // tile de aviso "API KEY REQUIRED" en vez de fallar). La key que nos
+      // dieron no es una key de basemaps válida — probada directo contra el
+      // server de CARTO, devuelve 403 "a valid, authorized API key is
+      // required" con o sin Referer. Falta sacar la key correcta en
+      // https://carto.com/basemaps/apikey (gratis, ~1 min).
+      //
+      // Con NEXT_PUBLIC_CARTO_API_KEY cargada (una vez que sea la correcta),
+      // vuelve a usar Voyager solo. Sin ella, tiles de OpenStreetMap sin
+      // clave, con el pane desaturado para no chocar con la paleta
+      // cream/petróleo del resto del sitio.
+      const cartoKey = process.env.NEXT_PUBLIC_CARTO_API_KEY;
+      if (cartoKey) {
+        L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${cartoKey}`, {
+          attribution: '&copy; <a href="https://carto.com/">CARTO</a>, &copy; <a href="https://openstreetmap.org">OSM</a>',
+          subdomains: 'abcd',
+          maxZoom: 19,
+        }).addTo(map);
+      } else {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          subdomains: 'abc',
+          maxZoom: 19,
+          className: 'map-tiles-muted',
+        }).addTo(map);
+      }
 
       const clusterGroup = L.layerGroup();
 

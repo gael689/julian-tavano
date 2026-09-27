@@ -1,18 +1,20 @@
 {
   "nav": {
     "prototipos": "House Models",
-    "personalizados": "Custom",
+    "personalizados": "New project",
     "obras": "Completed Works",
     "inversion": "Investment",
     "sobre": "About",
-    "contacto": "Contact"
+    "contacto": "Contact",
+    "role": "Architect",
+    "toggle_menu": "Toggle menu"
   },
   "hero": {
     "title": "Architecture that adapts to you.",
-    "subtitle": "Custom projects, plus house models that adapt to your land, and 50+ completed works.",
+    "subtitle": "Custom projects, plus house models that adapt to your land, and {count} completed works.",
     "ctas": {
       "prototipos": "View house models",
-      "aMedida": "Custom projects",
+      "aMedida": "New project",
       "obras": "View works",
       "inversiones": "Investments"
     }
@@ -31,36 +33,33 @@
     }
   },
   "customProjects": {
-    "title": "CUSTOM PROJECTS",
+    "title": "NEW PROJECT",
     "text": "Every plot tells a story. We design it together.",
-    "desc": "We offer custom architectural design, keeping our philosophy of respect for the environment, spatial warmth, and construction efficiency.",
+    "desc": "We design your project from scratch, keeping our philosophy of respect for the environment, spatial warmth, and construction efficiency.",
     "cta": "START A PROJECT"
   },
   "obras": {
     "eyebrow": "MONTE HERMOSO · BALNEARIO SAUCE GRANDE · SURROUNDINGS",
-    "title": "+50 WORKS",
-    "title_home": "+50 COMPLETED WORKS",
+    "title": "{count} WORKS",
+    "title_home": "{count} COMPLETED WORKS",
     "subtitle_home": "Monte Hermoso area.",
     "subtitle": "Each pin is a home we built.",
     "cta": "SEE ALL WORKS →",
-    "home_desc": "Explore the interactive map featuring over 50 projects built in Monte Hermoso and along the Argentine Atlantic coast.",
+    "home_desc": "Explore the interactive map featuring {count} projects built in Monte Hermoso and along the Argentine Atlantic coast.",
     "map_cta": "VIEW INTERACTIVE MAP",
     "search": "Search by name or area...",
     "ver_mas": "View more",
     "proximamente": "Coming soon."
   },
   "about": {
+    "eyebrow": "ABOUT THE STUDIO",
     "title": "JULIÁN TAVANO",
     "bio1": "Architect focused on the connection between habitat and nature.",
     "bio2": "Specialist in efficient modular construction, based in Monte Hermoso.",
     "bio3": "We design spaces that respect the environment and elevate quality of life.",
     "stats": {
-      "obras": "+50",
       "obras_label": "completed works",
-      "trayectoria": "+10",
-      "trayectoria_label": "years of experience",
-      "entregas": "100%",
-      "entregas_label": "delivered projects"
+      "trayectoria_label": "years of experience"
     }
   },
   "location": {
@@ -70,6 +69,7 @@
     "cta": "VIEW ON GOOGLE MAPS"
   },
   "contact": {
+    "eyebrow": "CONTACT",
     "title": "LET'S START",
     "form": {
       "name": "Full name",
@@ -77,15 +77,20 @@
       "phone": "Phone / WhatsApp",
       "interest": "What are you interested in?",
       "interest_proto": "A specific house model",
-      "interest_custom": "Custom project",
+      "interest_custom": "New project",
       "interest_general": "General inquiry",
       "land": "Do you own land?",
       "land_yes": "Yes",
       "land_no": "No",
       "land_process": "In the process of buying",
       "zone": "Where would you build?",
+      "surface_placeholder": "Approximate surface",
+      "surfaces": ["Up to 50 m²", "50 – 80 m²", "80 – 120 m²", "Over 120 m²"],
+      "budget_placeholder": "Estimated budget",
+      "budgets": ["Up to USD 30,000", "USD 30,000 – 60,000", "USD 60,000 – 100,000", "Over USD 100,000"],
       "message": "Message",
       "submit": "SEND INQUIRY",
+      "sending": "SENDING…",
       "success": "Inquiry sent successfully. We will be in touch soon."
     }
   },
@@ -152,7 +157,7 @@
     "descargar": "DOWNLOAD PREVIEW"
   },
   "footer": {
-    "tagline": "Homes that grow among the trees.",
+    "tagline": "Simple, honest architecture connected to its surroundings.",
     "rights": "© 2026 Julián Tavano Architecture. All rights reserved.",
     "developed_by": "Developed by"
   }

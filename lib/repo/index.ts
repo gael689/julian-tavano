@@ -86,6 +86,27 @@ export async function getObras(): Promise<Obra[]> {
   return (data as unknown as ObraRowWithImages[]).map(rowToObra);
 }
 
+/**
+ * Cantidad real de obras publicadas — para no volver a escribir "+50" a
+ * mano en ningún lado. Un `count` de Supabase, sin traer filas ni imágenes.
+ */
+export async function getObrasCount(): Promise<number> {
+  const supabase = createPublicClient();
+  if (!supabase) return OBRAS.length;
+
+  const { count, error } = await supabase
+    .from('obras')
+    .select('*', { count: 'exact', head: true })
+    .eq('published', true);
+
+  if (error || count == null) {
+    if (error) warn('obras:count', error.message);
+    return error ? OBRAS.length : 0;
+  }
+
+  return count;
+}
+
 export async function getInversiones(): Promise<Inversion[]> {
   const supabase = createPublicClient();
   if (!supabase) return INVERSIONES;

@@ -19,8 +19,8 @@ export async function generateMetadata({
     ? 'Obras — Mapa de proyectos construidos'
     : 'Works — Map of completed projects';
   const description = isEs
-    ? `Explorá el mapa interactivo con ${obrasCount} obras construidas por Julián Tavano en Monte Hermoso, Balneario Sauce Grande y la costa atlántica argentina.`
-    : `Explore the interactive map featuring ${obrasCount} projects built by Julián Tavano in Monte Hermoso, Balneario Sauce Grande and the Argentine Atlantic coast.`;
+    ? `Explorá el mapa interactivo con +${obrasCount} obras construidas por Julián Tavano en Monte Hermoso, Balneario Sauce Grande y la costa atlántica argentina.`
+    : `Explore the interactive map featuring +${obrasCount} projects built by Julián Tavano in Monte Hermoso, Balneario Sauce Grande and the Argentine Atlantic coast.`;
 
   return {
     title,

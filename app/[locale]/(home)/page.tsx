@@ -118,7 +118,7 @@ export default async function HomePage({
             name: '¿Dónde trabaja Julián Tavano y qué escala de proyectos maneja?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Julián Tavano tiene base en Monte Hermoso, Buenos Aires, y opera en todo el país. Su trabajo abarca desde viviendas individuales hasta inversiones en fideicomiso, desarrollos inmobiliarios y proyectos de gran escala, con ${obrasCount} obras ejecutadas.`,
+              text: `Julián Tavano tiene base en Monte Hermoso, Buenos Aires, y opera en todo el país. Su trabajo abarca desde viviendas individuales hasta inversiones en fideicomiso, desarrollos inmobiliarios y proyectos de gran escala, con +${obrasCount} obras ejecutadas.`,
             },
           },
         ]
@@ -160,7 +160,7 @@ export default async function HomePage({
             name: 'Where does Julián Tavano work and what scale of projects does he handle?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Julián Tavano is based in Monte Hermoso, Buenos Aires, and operates across Argentina. His work ranges from individual homes to trust fund investments, real estate developments and large-scale projects, with ${obrasCount} completed works.`,
+              text: `Julián Tavano is based in Monte Hermoso, Buenos Aires, and operates across Argentina. His work ranges from individual homes to trust fund investments, real estate developments and large-scale projects, with +${obrasCount} completed works.`,
             },
           },
         ],

@@ -160,12 +160,12 @@ export default async function PrototipoPage({
           {/* Left: description + uso */}
           <div className="lg:col-span-7">
             <p className="text-eyebrow text-olive mb-3">{t('descripcion')}</p>
-            <p className="text-body-l text-charcoal/70 leading-relaxed mb-10">{desc}</p>
+            <p className="text-xl md:text-2xl font-medium text-charcoal/70 leading-relaxed mb-10">{desc}</p>
 
             {/* Casos de uso */}
             <div className="flex flex-wrap gap-3 mb-12">
               {USE_CASES.map(({ Icon, label }) => (
-                <div key={label} className="flex items-center gap-2.5 border border-charcoal/12 px-4 py-2.5 text-sm text-charcoal/65">
+                <div key={label} className="flex items-center gap-2.5 border border-charcoal/12 px-4 py-2.5 text-base font-medium text-charcoal/65">
                   <Icon className="w-4 h-4 text-olive shrink-0" strokeWidth={1.5} />
                   {label}
                 </div>
@@ -176,7 +176,7 @@ export default async function PrototipoPage({
             <p className="text-eyebrow text-olive mb-5">{t('caracteristicas')}</p>
             <ul className="flex flex-col gap-4">
               {([0, 1, 2] as const).map((i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-charcoal/70 leading-relaxed">
+                <li key={i} className="flex items-start gap-3 text-base font-medium text-charcoal/70 leading-relaxed">
                   <CheckIcon className="w-4 h-4 text-olive shrink-0 mt-0.5" strokeWidth={2.5} />
                   {t(`highlights.${i}`)}
                 </li>
@@ -186,7 +186,7 @@ export default async function PrototipoPage({
             {/* Distribución */}
             <div className="mt-10 p-6 bg-charcoal/[0.04] border-l-2 border-olive">
               <p className="text-xs text-charcoal/45 uppercase tracking-widest font-bold mb-2">{t('distribucion')}</p>
-              <p className="text-charcoal/80 text-sm leading-relaxed">{proto.specs.features[lang]}</p>
+              <p className="text-charcoal/80 text-base font-medium leading-relaxed">{proto.specs.features[lang]}</p>
             </div>
           </div>
 

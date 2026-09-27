@@ -185,7 +185,7 @@ export default async function HomePage({
       <JsonLd data={itemListSchema} />
       <LetterboxIntro />
       <StickyFadeWrapper>
-        <Hero />
+        <Hero obrasCount={obrasCount} />
       </StickyFadeWrapper>
       <DarkenOnScrollOut startAt={0.68}>
         <Prototipos items={prototipos} />

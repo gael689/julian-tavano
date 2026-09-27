@@ -15,8 +15,8 @@
     "toggle_menu": "Toggle menu"
   },
   "hero": {
-    "title": "Architecture designed for every place.",
-    "subtitle": "We design homes, commercial spaces and developments that connect architecture, landscape and ways of living.",
+    "title": "Architecture that adapts to you.",
+    "subtitle": "Custom projects, plus house models that adapt to your land, and +{count} completed works.",
     "ctas": {
       "prototipos": "View house models",
       "aMedida": "New project",

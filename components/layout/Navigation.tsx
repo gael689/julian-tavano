@@ -7,10 +7,12 @@ import Image from 'next/image';
 import LanguageToggle from '@/components/ui/LanguageToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
+import { waLink } from '@/lib/contact/whatsapp';
 
 export default function Navigation() {
   const t = useTranslations('nav');
+  const waT = useTranslations('whatsapp');
   const pathname = usePathname();
   const isObrasPage = pathname === '/obras';
 
@@ -104,6 +106,19 @@ export default function Navigation() {
                 );
               })}
             </nav>
+            <a
+              href={waLink(waT('general'))}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={waT('cta')}
+              title={waT('cta')}
+              className={clsx(
+                "transition-colors",
+                scrolled ? "text-olive-deep hover:text-olive" : "text-cream hover:text-cream-light drop-shadow-md"
+              )}
+            >
+              <MessageCircle size={20} strokeWidth={2} />
+            </a>
             <div className={clsx("w-px h-4 transition-colors", scrolled ? "bg-concrete" : "bg-cream/30")} />
             <LanguageToggle />
           </div>

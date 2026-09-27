@@ -11,6 +11,7 @@ import MorePrototipos from '@/components/proto/MorePrototipos';
 import ScrollReset from '@/components/proto/ScrollReset';
 import LightboxProvider from '@/components/proto/LightboxProvider';
 import JsonLd from '@/components/seo/JsonLd';
+import { waLink } from '@/lib/contact/whatsapp';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://juliantavano.com.ar';
 
@@ -76,11 +77,12 @@ export default async function PrototipoPage({
   if (!proto) notFound();
 
   const t       = await getTranslations({ locale, namespace: 'protoPage' });
+  const waT     = await getTranslations({ locale, namespace: 'whatsapp' });
   const tagline = proto.tagline[lang] ?? proto.tagline.es;
   const desc    = proto.description[lang] ?? proto.description.es;
   const images  = proto.images;
   const typeLabel = proto.type === 'casa' ? t('type_casa') : t('type_cabana');
-  const wa      = `https://wa.me/5492494246878?text=${encodeURIComponent(`Hola Julián, me interesa la ${typeLabel} ${proto.name}`)}`;
+  const wa      = waLink(waT('por_modelo', { nombre: `${typeLabel} ${proto.name}` }));
 
   const SPECS = [
     { value: proto.specs.coveredArea,     unit: 'm²', label: t('specs.cubiertos')     },
@@ -212,7 +214,7 @@ export default async function PrototipoPage({
         <div className="container-layout py-16 md:py-20">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-16">
             <div className="max-w-2xl">
-              <p className="text-eyebrow text-olive mb-4">{t('siguiente_paso')}</p>
+              <p className="text-eyebrow text-olive-pale mb-4">{t('siguiente_paso')}</p>
               <h2
                 className="text-cream font-bold leading-tight"
                 style={{

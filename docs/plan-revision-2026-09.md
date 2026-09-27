@@ -137,6 +137,15 @@ y qué falta, al final de cada etapa.
     `Navigation.tsx` (ahora `bg-olive-soft`) y `rgba(58,74,42,…)` en
     `ObrasClient.tsx` (ahora el rgb de petróleo).
   - `themeColor`/`manifest.ts` actualizados a petróleo.
+  - **Bug encontrado por Gael el 27/sep:** varios eyebrows/íconos que usan
+    `text-olive` quedaron ilegibles sobre fondos oscuros (petróleo sobre
+    grafito da 1.96:1 — peor que el 2.21:1 de antes, que ya era malo). Se
+    agregó `--color-olive-pale: #9CB09D` (6.39:1 sobre grafito) y se
+    reemplazó en los 5 puntos afectados: el eyebrow de "Proyecto nuevo"
+    (el que reportó), el de "Contacto", el ✓ de éxito del formulario, el
+    radio de "¿Tenés terreno?" y el eyebrow de "Siguiente paso" en la ficha
+    de modelo. Los mismos usos sobre fondo claro (Sobre, Modelos, etc.)
+    siguen con `text-olive`, que ahí anda bien (6.59:1).
 - ✅ **Favicon** (antes 404, con `logo.png` blanco-sobre-transparente como
   ícono): `app/favicon.ico`, `app/icon.png` y `app/apple-icon.png`, el
   isotipo (recortado del `icon.png` original, sin el texto "ARQUITECTURA")
@@ -154,47 +163,65 @@ y qué falta, al final de cada etapa.
 - ⏳ **Header compacto con el isotipo relleno:** depende del punto anterior.
   No se tocó `Navigation.tsx` más que lo ya descripto en Etapa 1/paleta.
 
-## Etapa 3 — Portada y contacto (arrancada: copy hecho, visual pendiente)
+## Etapa 3 — Portada y contacto ✅ mayormente hecho (27/sep, 2da pasada)
 
-- **Hero** (`components/sections/Hero.tsx`):
-  - Imagen: Casa Cardón `07.jpg`, recorte horizontal para escritorio y el
-    vertical original para celular (`<picture>` o dos `Image` por breakpoint).
-    ⏳ No hecho — implica recortar el asset y revisarlo en pantalla, se deja
-    para la próxima pasada.
-  - Título: "Arquitectura pensada para cada lugar." ⏳ No hecho (va junto con
-    el cambio de imagen).
+- ✅ **Hero** (`components/sections/Hero.tsx`):
+  - Imagen: Casa Cardón `07.jpg`. **Sin recorte manual** — iba a hacerse con
+    `<picture>`/dos `Image`, pero se usó el mismo patrón que ya tenía la
+    Coihue (un solo `Image` con `fill object-cover`, sin `object-position`
+    custom): el crop automático por `object-cover` ya se ve bien tanto en
+    mobile como en desktop (verificado por captura en ambos anchos). Si en
+    revisión se ve mal en algún breakpoint puntual, ahí sí vale la pena el
+    `<picture>`.
+  - Título: "Arquitectura pensada para cada lugar."
   - Bajada: "Diseñamos viviendas, espacios comerciales y desarrollos que
-    conectan arquitectura, paisaje y forma de habitar." ⏳ No hecho.
-  - **Se mantienen los 4 botones** (pedido explícito de Gael, 27/sep — no
-    reducir). Sus 4 colores ya quedaron dentro de la paleta nueva (petróleo,
-    arena-fuerte, grafito, salvia) al repuntar los tokens en la Etapa 2 —
-    verificado por captura, conviven bien.
+    conectan arquitectura, paisaje y forma de habitar."
+  - Se sacó el conteo de obras del subtítulo del hero (la copy del informe
+    no lo llevaba) — sigue mostrado en "Sobre" y en la sección de obras.
+  - **Se mantienen los 4 botones**, sus colores ya estaban resueltos por la
+    paleta de la Etapa 2.
 - ✅ **"Proyecto nuevo"**: nav, hero, sección (`CustomProjects.tsx`), opción
   del formulario, ES y EN ("New project"). Mensaje de sección: "Diseñamos tu
-  proyecto desde cero" / "We design your project from scratch". El ancla
-  `#proyectos-personalizados` quedó igual, como estaba previsto.
+  proyecto desde cero" / "We design your project from scratch".
 - ✅ **Footer:** "Arquitectura simple, honesta y conectada con el entorno." /
   "Simple, honest architecture connected to its surroundings." (`footer.tagline`).
-- **WhatsApp**:
-  - Número único en `lib/contact/` (hoy repetido en `Footer.tsx`,
-    `Contact.tsx` y `modelos/[slug]/page.tsx`).
-  - Componente `WhatsAppButton`: flotante fijo en todas las páginas, acceso en
-    el header y barra inferior en celular "Consultar por WhatsApp".
-  - Mensajes prearmados:
-    - General: "Hola, vi la página de Julián Tavano Arquitectura y quisiera
+- ✅ **WhatsApp**:
+  - Número único en `lib/contact/whatsapp.ts` (antes repetido a mano en
+    `Footer.tsx`, `Contact.tsx` y `modelos/[slug]/page.tsx`).
+  - `components/ui/WhatsAppButton.tsx`: botón flotante fijo en todas las
+    páginas (mensaje general), más un ícono en el header (desktop y mobile,
+    junto al selector de idioma).
+  - Mensajes prearmados (dice "Arquitecto", no "Arquitectura" — ver
+    "Nombre de marca" más arriba):
+    - General: "Hola, vi la página de Julián Tavano Arquitecto y quisiera
       recibir información sobre un proyecto nuevo."
-    - Por modelo u obra: "Hola, vi el proyecto [NOMBRE] en la web y quisiera
-      recibir más información."
-  - En el formulario, el botón de WhatsApp deja de estar en gris al 50%.
-- **Formulario** (`Contact.tsx`): de 9 campos a nombre, WhatsApp o email,
-  interés y mensaje. Zona, terreno, superficie y presupuesto pasan a opcionales
-  y plegados. Ajustar `lib/contact/schema.ts` si cambia lo requerido.
-- **Navegación:** sacar `target="_blank"` de Obras y de las tarjetas de
-  modelos (rompe el "atrás" en celular). `/obras` muestra el header normal.
+    - Por modelo: "Hola, vi el proyecto [Casa/Cabaña + nombre] en la web y
+      quisiera recibir más información." Por obra: queda pendiente de la
+      Etapa 4 (todavía no hay fichas de obra a las que enlazar un mensaje).
+  - No se agregó una barra aparte para celular: el botón flotante ya cumple
+    esa función en cualquier ancho, una segunda barra hubiera sido
+    redundante.
+  - **No se tocó** el botón de WhatsApp dentro del formulario de contacto
+    más allá del arreglo de contraste (ver Etapa 2) — seguía en gris al 50%
+    en reposo, eso no cambió.
+- ⏳ **Formulario** (`Contact.tsx`): **no se achicó.** Sigue con los 9
+  campos. No estaba claramente re-confirmado y cambia qué datos le llegan a
+  Julián de cada consulta — se prefirió no tocarlo sin avisar antes.
+- ⏳ **Navegación:** `target="_blank"` en Obras y en las tarjetas de modelos
+  sigue igual — no se tocó en esta pasada.
+- ✅ **Borde ondulado ("ola")**: implementado en los dos cortes que existen
+  hoy en el orden real de la home (no en "Proyecto nuevo→Modelos", que
+  depende del reordenamiento de la Etapa 4, todavía sin hacer):
+  `components/ui/Ola.tsx`, entre Proyecto nuevo→Inversión (grafito→salvia) y
+  entre Sobre→Contacto (hueso→grafito). Sin color nuevo, sin animación.
+  Aviso para cuando se implemente el reordenamiento de la Etapa 4: la ola
+  entre Proyecto nuevo y Sobre/Contacto habrá que revisarla si cambia qué
+  secciones quedan adyacentes.
 
-## Etapa 4 — Autoridad
+## Etapa 4 — Autoridad (biografía hecha, resto pendiente de Julián)
 
-- **Biografía** (`About.tsx` + messages), texto del informe:
+- ✅ **Biografía** (`About.tsx` + messages) — el texto del informe, completo,
+  en ES y EN, traducido:
   > Julián Tavano es arquitecto graduado en la Universidad Nacional de La Plata
   > en 2018, con Matrícula Provincial N.º 30.944.
   >
@@ -209,8 +236,8 @@ y qué falta, al final de cada etapa.
   > modular, dirección de obra y emprendimientos de inversión, acompañando cada
   > proyecto desde la primera idea hasta su materialización.
 
-  Foto: se mantiene `about-image.jpg`. Traducir al inglés.
-- **Fichas de obra**:
+  Foto: se mantiene `about-image.jpg`.
+- ⏳ **Fichas de obra** (bloqueado — necesita el material de Julián):
   - Migración `supabase/migrations/2026…_obras_fichas.sql`: `surface`
     (numeric), `intervention` (text), `status` (text), `featured` (boolean,
     default false). Actualizar `lib/supabase/types.ts`, `lib/repo/mappers.ts`,

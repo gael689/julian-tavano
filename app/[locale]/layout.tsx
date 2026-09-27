@@ -5,6 +5,7 @@ import { routing } from '@/routing';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import SmoothScrollProvider from '@/components/layout/SmoothScrollProvider';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import JsonLd from '@/components/seo/JsonLd';
 import { Montserrat } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
@@ -200,6 +201,7 @@ export default async function LocaleLayout({
             <Navigation />
             <main>{children}</main>
             <Footer />
+            <WhatsAppButton />
           </SmoothScrollProvider>
         </NextIntlClientProvider>
       </body>

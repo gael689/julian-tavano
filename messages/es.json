@@ -1,4 +1,9 @@
 {
+  "whatsapp": {
+    "cta": "Consultar por WhatsApp",
+    "general": "Hola, vi la página de Julián Tavano Arquitecto y quisiera recibir información sobre un proyecto nuevo.",
+    "por_modelo": "Hola, vi el proyecto {nombre} en la web y quisiera recibir más información."
+  },
   "nav": {
     "prototipos": "Modelos de casas",
     "personalizados": "Proyecto nuevo",
@@ -10,8 +15,8 @@
     "toggle_menu": "Abrir o cerrar el menú"
   },
   "hero": {
-    "title": "Arquitectura que se adapta a vos.",
-    "subtitle": "Proyectos a medida, también modelos de casas que se adaptan a tu terreno, {count} obras construidas.",
+    "title": "Arquitectura pensada para cada lugar.",
+    "subtitle": "Diseñamos viviendas, espacios comerciales y desarrollos que conectan arquitectura, paisaje y forma de habitar.",
     "ctas": {
       "prototipos": "Ver modelos de casas",
       "aMedida": "Proyecto nuevo",
@@ -54,9 +59,10 @@
   "about": {
     "eyebrow": "SOBRE EL ESTUDIO",
     "title": "JULIÁN TAVANO",
-    "bio1": "Arquitecto enfocado en la conexión entre hábitat y naturaleza.",
-    "bio2": "Especialista en construcción modular eficiente, con base en Monte Hermoso.",
-    "bio3": "Diseñamos espacios que respetan el entorno y elevan la calidad de vida.",
+    "bio1": "Julián Tavano es arquitecto graduado en la Universidad Nacional de La Plata en 2018, con Matrícula Provincial N.º 30.944.",
+    "bio2": "Nacido en Tandil y radicado en Monte Hermoso, desarrolla proyectos de arquitectura en la costa atlántica y diferentes puntos del país.",
+    "bio3": "Su trabajo parte de una mirada simple y funcional: diseñar espacios honestos, eficientes y llenos de vida, capaces de relacionarse con el paisaje y responder a las necesidades reales de quienes los habitan.",
+    "bio4": "El estudio desarrolla viviendas, proyectos comerciales, construcción modular, dirección de obra y emprendimientos de inversión, acompañando cada proyecto desde la primera idea hasta su materialización.",
     "stats": {
       "obras_label": "obras construidas",
       "trayectoria_label": "años de trayectoria"

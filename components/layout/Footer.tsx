@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/routing';
 import Image from 'next/image';
+import { WHATSAPP_DISPLAY, waLink } from '@/lib/contact/whatsapp';
 
 function InstagramIcon({ size = 16, className = '' }: { size?: number; className?: string }) {
   return (
@@ -29,6 +30,7 @@ function InstagramIcon({ size = 16, className = '' }: { size?: number; className
 export default function Footer() {
   const t = useTranslations('footer');
   const navT = useTranslations('nav');
+  const waT = useTranslations('whatsapp');
   const pathname = usePathname();
 
   if (pathname === '/obras') return null;
@@ -97,12 +99,12 @@ export default function Footer() {
               estudioarqjt@gmail.com
             </a>
             <a
-              href="https://wa.me/5492494246878"
+              href={waLink(waT('general'))}
               target="_blank"
               rel="noopener noreferrer"
               className="text-body font-normal text-charcoal/80 hover:text-olive-deep transition-colors"
             >
-              +54 9 2494 24-6878
+              {WHATSAPP_DISPLAY}
             </a>
             <a
               href="https://instagram.com/arq.juliantavano"

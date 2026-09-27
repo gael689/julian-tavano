@@ -19,7 +19,7 @@ const ctaBase =
   'whitespace-nowrap transition-all shadow-[0_2px_12px_rgba(0,0,0,0.35)] ' +
   'px-6 py-3 text-sm lg:px-4 lg:py-2.5 lg:text-[13px] xl:px-6 xl:py-3 xl:text-base';
 
-export default function Hero({ obrasCount }: { obrasCount: number }) {
+export default function Hero() {
   const t = useTranslations('hero');
 
   return (
@@ -31,7 +31,7 @@ export default function Hero({ obrasCount }: { obrasCount: number }) {
           style={{ transformOrigin: 'center center' }}
         >
           <Image
-            src="/prototipos/cabana-coihue/imagenes/01_hero.jpg"
+            src="/prototipos/casa-cardon/imagenes/07.jpg"
             alt=""
             fill
             priority
@@ -72,7 +72,7 @@ export default function Hero({ obrasCount }: { obrasCount: number }) {
                 textShadow: '0 1px 2px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.7), 0 0 2px rgba(0,0,0,1)',
               }}
             >
-              {t('subtitle', { count: obrasCount })}
+              {t('subtitle')}
             </motion.p>
 
             {/* Los 4 CTA en una sola fila desde lg — abajo de ese ancho no

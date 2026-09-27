@@ -24,6 +24,11 @@
      no alcanza AA para el texto que lleva encima (Inversión, header de
      /obras). Con este tono, cream/hueso encima llega a 4.89:1. */
   --color-olive-soft: #5F6C58;
+  /* Petróleo es demasiado oscuro para texto/ícono chico sobre grafito
+     (1.96:1 — bug real reportado el 27/sep en "PROYECTO NUEVO", ilegible).
+     Esta variante clara da 6.39:1 sobre grafito: para eyebrows, checks e
+     íconos que hoy usan `olive` pero están sobre fondo oscuro, no claro. */
+  --color-olive-pale: #9CB09D;
   --color-cream: #F3F0E8;        /* hueso */
   --color-cream-light: #F8F5EE;
   --color-charcoal: #252927;     /* grafito */

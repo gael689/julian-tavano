@@ -82,7 +82,7 @@ export default function About({
             </motion.h2>
 
             <div className="space-y-4">
-              {(['bio1', 'bio2', 'bio3'] as const).map((key, i) => (
+              {(['bio1', 'bio2', 'bio3', 'bio4'] as const).map((key, i) => (
                 <motion.p
                   key={key}
                   initial={{ opacity: 0, y: 20 }}

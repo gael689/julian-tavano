@@ -10,6 +10,7 @@ import Inversion from '@/components/sections/Inversion';
 import About from '@/components/sections/About';
 import Contact from '@/components/sections/Contact';
 import LocationMap from '@/components/sections/LocationMap';
+import Ola from '@/components/ui/Ola';
 import JsonLd from '@/components/seo/JsonLd';
 import { getInversiones, getObrasCount, getPrototipos } from '@/lib/repo';
 
@@ -184,7 +185,7 @@ export default async function HomePage({
       <JsonLd data={itemListSchema} />
       <LetterboxIntro />
       <StickyFadeWrapper>
-        <Hero obrasCount={obrasCount} />
+        <Hero />
       </StickyFadeWrapper>
       <DarkenOnScrollOut startAt={0.68}>
         <Prototipos items={prototipos} />
@@ -195,12 +196,14 @@ export default async function HomePage({
       <DarkenOnScrollOut variant="lighten">
         <CustomProjects />
       </DarkenOnScrollOut>
+      <Ola fondo="bg-charcoal" color="text-olive-soft" />
       <DarkenOnScrollOut variant="lighten" startAt={0.4} brightnessEnd={2.8}>
         <Inversion items={inversiones} />
       </DarkenOnScrollOut>
       <DarkenOnScrollOut startAt={0.35}>
         <About obrasCount={obrasCount} aniosTrayectoria={aniosTrayectoria} />
       </DarkenOnScrollOut>
+      <Ola fondo="bg-cream" color="text-charcoal" />
       <Contact />
       <DarkenOnScrollOut>
         <LocationMap />

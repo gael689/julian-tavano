@@ -1,4 +1,9 @@
 {
+  "whatsapp": {
+    "cta": "Chat on WhatsApp",
+    "general": "Hi, I saw Julián Tavano Arquitecto's website and would like information about a new project.",
+    "por_modelo": "Hi, I saw the {nombre} project on the website and would like more information."
+  },
   "nav": {
     "prototipos": "House Models",
     "personalizados": "New project",
@@ -10,8 +15,8 @@
     "toggle_menu": "Toggle menu"
   },
   "hero": {
-    "title": "Architecture that adapts to you.",
-    "subtitle": "Custom projects, plus house models that adapt to your land, and {count} completed works.",
+    "title": "Architecture designed for every place.",
+    "subtitle": "We design homes, commercial spaces and developments that connect architecture, landscape and ways of living.",
     "ctas": {
       "prototipos": "View house models",
       "aMedida": "New project",
@@ -54,9 +59,10 @@
   "about": {
     "eyebrow": "ABOUT THE STUDIO",
     "title": "JULIÁN TAVANO",
-    "bio1": "Architect focused on the connection between habitat and nature.",
-    "bio2": "Specialist in efficient modular construction, based in Monte Hermoso.",
-    "bio3": "We design spaces that respect the environment and elevate quality of life.",
+    "bio1": "Julián Tavano is an architect who graduated from the Universidad Nacional de La Plata in 2018, holding Provincial License N.º 30.944.",
+    "bio2": "Born in Tandil and based in Monte Hermoso, he develops architecture projects along the Atlantic coast and across the country.",
+    "bio3": "His work starts from a simple, functional outlook: designing honest, efficient spaces full of life, able to relate to the landscape and respond to the real needs of the people who live in them.",
+    "bio4": "The studio works on homes, commercial projects, modular construction, site management and investment developments, accompanying each project from the first idea through to completion.",
     "stats": {
       "obras_label": "completed works",
       "trayectoria_label": "years of experience"

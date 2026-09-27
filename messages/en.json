@@ -65,7 +65,8 @@
     "bio4": "The studio works on homes, commercial projects, modular construction, site management and investment developments, accompanying each project from the first idea through to completion.",
     "stats": {
       "obras_label": "completed works",
-      "trayectoria_label": "years of experience"
+      "trayectoria_label": "years of experience",
+      "entregas_label": "delivered projects"
     }
   },
   "location": {

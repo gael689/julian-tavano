@@ -48,8 +48,9 @@ export default function About({
   // frame antes de que el scroll dispare la animación. Solo se anima la
   // aparición (fade + slide), no la cifra.
   const STATS = [
-    { value: obrasCount,       prefix: '+', suffix: '', labelKey: 'obras_label'       as const },
-    { value: aniosTrayectoria, prefix: '+', suffix: '', labelKey: 'trayectoria_label' as const },
+    { value: obrasCount,       prefix: '+', suffix: '',  labelKey: 'obras_label'       as const },
+    { value: aniosTrayectoria, prefix: '+', suffix: '',  labelKey: 'trayectoria_label' as const },
+    { value: 100,              prefix: '',  suffix: '%', labelKey: 'entregas_label'    as const },
   ];
 
   return (

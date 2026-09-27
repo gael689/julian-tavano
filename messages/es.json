@@ -65,7 +65,8 @@
     "bio4": "El estudio desarrolla viviendas, proyectos comerciales, construcción modular, dirección de obra y emprendimientos de inversión, acompañando cada proyecto desde la primera idea hasta su materialización.",
     "stats": {
       "obras_label": "obras construidas",
-      "trayectoria_label": "años de trayectoria"
+      "trayectoria_label": "años de trayectoria",
+      "entregas_label": "proyectos entregados"
     }
   },
   "location": {

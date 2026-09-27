@@ -254,23 +254,32 @@ y qué falta, al final de cada etapa.
 
 ## Etapa 5 — Marca de agua y rendimiento
 
-- **Marca de agua nueva**, visible:
-  - Isotipo JT relleno + "JULIÁN TAVANO ARQUITECTURA", abajo a la derecha,
-    ~15–18 % del ancho, blanco al 50–60 % con sombra suave para que se lea en
-    fondos claros y oscuros.
-  - **Primero una muestra** en 2–3 renders (claro, oscuro, interior) para que
-    Julián apruebe tamaño y opacidad. Recién después se aplica a todo.
-  - Script nuevo `scripts/watermark.mjs` (sharp) que **no pisa originales**:
-    lee de una carpeta de originales fuera de `public/` (gitignoreada) y
-    escribe en `public/`. El script actual `scripts/watermark-coihue.mjs`
-    sobrescribió el archivo; no reutilizar ese patrón.
-  - Sin originales limpios, la marca nueva convive con la vieja (arriba a la
-    derecha). Con Brote se puede regenerar limpia desde su PDF fuente
-    (`extract_prototype_images.py`).
-  - Imágenes cargadas desde el panel (Cloudinary): aplicar la marca como capa
-    al servirlas, así lo que suba el estudio sale protegido solo.
-  - Aclarar al cliente: la marca disuade, no impide la copia. No bloquear
-    clic derecho.
+- ✅ **Marca de agua nueva** (28/sep — Gael pidió aplicarla directo, sin
+  esperar la muestra a Julián):
+  - **Solo texto** — "JULIÁN TAVANO" / "ARQUITECTO" en Montserrat (la
+    tipografía del sitio), no el isotipo relleno (ese sigue en pausa, ver
+    Etapa 2). Abajo a la derecha, con un panel oscuro translúcido detrás del
+    texto para que se lea sobre cualquier imagen, clara u oscura — más
+    robusto que solo una sombra.
+  - `scripts/watermark.py` (Python + Pillow, no `sharp`/`.mjs` como decía el
+    plan original — más simple dado que ya se venía usando Python en esta
+    sesión). Pisa los archivos de `public/prototipos/*/imagenes/*.jpg`
+    **en su lugar**, pero son archivos versionados en git: cualquier corrida
+    se puede deshacer con `git checkout -- <archivo>`. Fuentes en
+    `scripts/assets/fonts/` (Montserrat Bold/SemiBold, OFL, bajadas de
+    Google Fonts).
+  - Aplicada a las 43 imágenes de los 6 modelos. **No se regeneraron desde
+    los PDF fuente** (siguen sueltos en cada carpeta, gitignorados) para no
+    arriesgar un recorte/calidad distinta a la que ya está publicada — la
+    marca nueva convive con la vieja (arriba a la derecha, chica), como ya
+    anticipaba este plan.
+  - Ejemplo verificado visualmente sobre fondo claro (arena), oscuro
+    (madera) e interior — legible en los tres casos.
+  - **Pendiente:** imágenes cargadas desde el panel (Cloudinary) todavía no
+    llevan esta marca automática al subirlas — reservado para cuando haya
+    fotos de obras reales que cargar.
+  - Sigue valiendo la aclaración al cliente: la marca disuade, no impide la
+    copia. No se bloqueó clic derecho.
 - **Peso de imágenes** (`next.config.ts` tiene `unoptimized: true` por
   Hostinger): el mismo script genera WebP a 1800 / 1200 / 800 px con `srcset`.
   Hoy son JPG de 600–900 KB; el hero pesa 769 KB.
@@ -278,6 +287,28 @@ y qué falta, al final de cada etapa.
 - **Animación**: acortar o sacar `LetterboxIntro` (1,5 s antes de ver la
   portada), reducir `DarkenOnScrollOut` (filtro `brightness` en casi todas las
   secciones, caro en celulares) y respetar `prefers-reduced-motion`.
+
+## Hallazgo suelto — vulnerabilidades de npm ✅ parcialmente resuelto (28/sep)
+
+Alerta de un escaneo de dependencias (2026-09-27): 30 vulnerabilidades (2
+críticas, 15 altas, 13 moderadas) sobre 478 paquetes. `npm audit` local dio
+un número más chico (6: 1 crítica, 5 altas) — probablemente el escaneo del
+hosting cuenta transitivas de forma distinta, pero apunta a lo mismo.
+
+- ✅ `npm audit fix` (sin `--force`, sin cambios de mayor versión) resolvió
+  5 de 6: **Next.js pasó de 15.5.19 a 15.5.26**, que es la parte crítica de
+  verdad (RCE, SSRF y DoS en Server Actions, entre otras). También
+  brace-expansion, js-yaml, nanoid y sharp. `package.json` no cambió (seguía
+  dentro del rango `^15.3.0`), solo `package-lock.json`.
+- ⏳ Queda 1 alta: un `postcss` vulnerable **empaquetado dentro de Next.js
+  mismo** (no el `postcss` propio del proyecto). Solo se resuelve pasando a
+  **Next.js 16** — un cambio de versión mayor, con su propia guía de
+  migración (codemods), que no se metió en esta misma pasada para no sumar
+  ese riesgo a todo lo demás que se tocó hoy. Es create-next-app / la skill
+  `vercel:next-upgrade` cuando se decida encararlo. El riesgo real de este
+  ítem puntual es bajo: ese postcss corre en el build (sobre el CSS propio
+  del sitio), no sobre input de un visitante.
+- Verificado: typecheck, lint y build limpios después del `npm audit fix`.
 
 ## Etapa 6 — Los Aromos (en pausa)
 

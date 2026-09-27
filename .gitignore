@@ -65,3 +65,7 @@ image.png
 /entregable-cliente/
 /PENDIENTE.md
 /SUPABASE-SETUP.md
+
+# Python (scripts/watermark.py)
+__pycache__/
+*.pyc
